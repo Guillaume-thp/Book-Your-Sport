@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BookYourSport</title>
+
+<head>
+    <link rel="icon" type="image/png" href="assets/logo_BYS.png" />
+    <title>Book Your Sport</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+        <%= csp_meta_tag %>
+            <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+                <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<header>
+    <div class="sticky ">
+        <nav class="navbar navbar-expand topnav bg-#fff">
+            <%= image_tag("logo_BYS.png", :alt => "BYS logo", :class => "img-s") %>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
 
-  <body>
+                <%=link_to "Accueil", root_path, class: "btn btn-inverse" %>
+
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+
+                    <%= link_to "L'équipe", root_path, class: "btn btn-inverse" %>
+
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+
+                        <%= link_to "A propos", root_path, class: "btn btn-inverse" %>
+
+                            <div class="right">
+                                <% if user_signed_in? %>
+                                    <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
+                                        <% else %>
+                                            <%= link_to "Connexion", new_user_session_path, class: "btn btn-inverse" %>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <%= link_to "Inscription", new_user_registration_path, class: "btn btn-inverse" %>
+                                                    <% end %>
+                            </div>
+    </div>
+    </div>
+    </nav>
+
+</header>
+
+<body>
     <%= yield %>
-  </body>
+
+</body>
+
 </html>

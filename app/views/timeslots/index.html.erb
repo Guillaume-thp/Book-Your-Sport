@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+p id="notice">
+<%= notice %>
+    </p>
+    <br><br>
+    <h1>Créneaux disponibles</h1>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @timeslots.each do |timeslot| %>
+
+                <div class="col s12 m7">
+                    <div class="card horizontal">
+                        <div class="card-content">
+                            <button type="button" class="btn btn-warning right">Réserver ce créneau</button>
+                            <b>
+                          <p>&nbsp; &nbsp; DATE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; HEURE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DUREE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VILLE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PRIX
+                          </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <% end %>
+          </tbody>
+      </table>
+  
+      <html>
+
+  
+      </html>
