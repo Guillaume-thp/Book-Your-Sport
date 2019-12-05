@@ -7,10 +7,9 @@ class ScrapLeFive
   def initialize
   end
   
-  def perform
+  def perform#(city,time,duration)
     
-    puts ENV['USER_EMAIL']
-    puts ENV['USER_PASSWORD']
+
     agent = Mechanize.new
 
     page = agent.get('https://www.soccerpark.fr/identifiez-vous/') # Get the Login page
@@ -89,16 +88,36 @@ class ScrapLeFive
 
     page = agent.submit(page.forms.last, page.forms.last.button)
     board = page.parser.xpath('//html/body/div[1]/div[2]/div/div/div[2]')
-    line_1_date = board.xpath('div[2]/div[1]').text
-    line_1_time = board.xpath('div[2]/div[2]').text
-    line_1_duration = board.xpath('div[2]/div[3]').text
-    line_1_price = board.xpath('div[2]/div[6]').text
+    # line_1_date = board.xpath('div[2]/div[1]').text
+    # line_1_time = board.xpath('div[2]/div[2]').text
+    # line_1_duration = board.xpath('div[2]/div[3]').text
+    # line_1_price = board.xpath('div[2]/div[6]').text
+    i = 2
+    date_array = []
+    time_array = []
+    duration_array = []
+    price_array = []  
+    #puts board.xpath('//div["#{i}"]/div[1]').text
+    until board.xpath('div['"#{i}"']/div[1]').text == "" do #page.parser.xpath('//html/body/div[1]/div[2]/div/div/div[2]/div["#{i}"]/div[1]')
+    date_array << board.xpath('div['"#{i}"']/div[1]').text
+    time_array << board.xpath('div['"#{i}"']/div[2]').text
+    duration_array << board.xpath('div['"#{i}"']/div[3]').text
+    price_array << board.xpath('div['"#{i}"']/div[6]').text
+    i = i +1
+        
+    end
+
+    return date_array, time_array, duration_array, price_array
+   
+
     #center_field.value = center_field.options_with(:text => @city)[0].value
 
 
-    return line_1_date, line_1_time, line_1_duration, line_1_price   
+     
  
   end
+
+
 
 
 end
