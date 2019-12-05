@@ -10,8 +10,8 @@
 </head>
 
 <header>
+    <!-- START NAVBAR -->
     <nav class="navbar navbar-expand topnav">
-        <!-- <div class="sticky "> -->
         <%= image_tag("logo_BYS.png", :alt => "BYS logo", :class => "img-s") %>
         <%=link_to "Accueil", root_path, class: "btn btn-inverse" %>
         <%= link_to "L'équipe", root_path, class: "btn btn-inverse" %>
@@ -24,23 +24,18 @@
             <%= link_to "Inscription", new_user_registration_path, class: "btn btn-inverse" %>
             <% end %>
         </div>
-        <!-- </div> -->
     </nav>
+    <!-- END NAVBAR -->
 </header>
-
 
 <body>
     <%= yield %>
-
 </body>
 
 <footer>
-
     <!-- START FOOTER -->
-
     <p> Contact information: <a href="mailto: bookyoursport@yahoo.com"> bookyoursport @yahoo.com </a></p>
     <p>Make with love ♥ : Guillaume VIDALE, Hilal BUSHERA, Emilio LECERF, Michael KRASNOVSKY, Estelle BALLIF </p>
-
     <!-- END FOOTER -->
 </footer>
 
