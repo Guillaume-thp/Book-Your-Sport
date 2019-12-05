@@ -4867,7 +4867,7 @@ input[type="button"].btn-block {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.555);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.555); */
     text-decoration: none;
 }
 
