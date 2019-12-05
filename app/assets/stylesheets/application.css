@@ -11400,13 +11400,25 @@ h1 {
     background-size: cover;
 }
 
-footer {
+
+/* footer {
     font-size: 16px;
     display: flex;
     justify-content: space-between;
     background-color: black;
     color: white;
     padding: 14px 16px;
+} */
+
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 }
 
 input[type=date],
