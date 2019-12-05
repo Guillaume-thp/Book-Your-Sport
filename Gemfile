@@ -3,13 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-
-gem 'watir'
-gem 'selenium-webdriver'
-gem 'faker'
-gem 'table_print'
-gem 'devise'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
@@ -67,3 +60,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "watir", "~> 6.16"
+gem "faker", "~> 2.8"
+gem "table_print", "~> 1.5"
+gem "devise", "~> 4.7"
