@@ -5905,11 +5905,18 @@ a.badge-dark.focus {
 }
 
 .jumbotron {
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-color: #e9ecef;
-    border-radius: 0.3rem;
-    background-size: cover;
+    /* padding: 2rem 1rem; */
+    /* margin-bottom: 2rem; */
+    /* background-color: #e9ecef; */
+    /* border-radius: 0.3rem; */
+    background: url("https://www.neuillysurmarne.fr/wp-content/uploads/2015/10/FUTSAL.jpg");
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    /* background-size: cover; */
 }
 
 @media (min-width: 576px) {
@@ -11166,9 +11173,10 @@ blockquote {
     font-style: italic;
 }
 
-footer {
+
+/* footer {
     font-size: 0.930125rem;
-}
+} */
 
 .lead {
     color: #868e96;
@@ -11394,11 +11402,12 @@ h1 {
     text-align: center;
 }
 
-.jumbotron {
+
+/* .jumbotron {
     background-image: url("https://www.neuillysurmarne.fr/wp-content/uploads/2015/10/FUTSAL.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 
 
 /* footer {
@@ -11416,9 +11425,12 @@ footer {
     right: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
-    color: white;
+    justify-content: space-between;
+    background-color: white;
+    /* text color */
+    color: black;
     text-align: center;
+    font-size: 0.930125rem;
 }
 
 input[type=date],
