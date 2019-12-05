@@ -16,14 +16,14 @@
         <%=link_to "Accueil", root_path, class: "btn btn-inverse" %>
         <%= link_to "L'équipe", root_path, class: "btn btn-inverse" %>
         <%= link_to "A propos", root_path, class: "btn btn-inverse" %>
-        <div>
+        <ul class="nav ml-auto">
             <% if user_signed_in? %>
             <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
             <% else %>
-            <%= link_to "Connexion", new_user_session_path, class: "btn btn-inverse" %>
-            <%= link_to "Inscription", new_user_registration_path, class: "btn btn-inverse" %>
+            <%= link_to "Connexion", new_user_session_path, class: "btn btn-inverse nav-item" %>
+            <%= link_to "Inscription", new_user_registration_path, class: "btn btn-inverse nav-item" %>
             <% end %>
-        </div>
+        </ul>
     </nav>
     <!-- END NAVBAR -->
 </header>
