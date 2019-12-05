@@ -1,26 +1,81 @@
-<div class="jumbotron">
-    <br><br><br><br><br><br>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+ 	
+ 	<div class="jumbotron">
     <h1 class="display-2">Book Your Sport</h1>
     <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
     <hr class="my-4">
-    <form>
-        <select class="custom-select" style="width:300px; margin:10px;">
-          <option value="0">Football</option>
-          <option value="1">Basket-ball</option>
-          <option value="2">Volley-ball</option>
-        </select>
-        <input type="date">
-        <input type="time">
-        <select class="custom-select" style="width:300px;">
-          <option value="0">Paris</option>
-          <option value="1">Lyon</option>
-          <option value="2">Marseille</option>
-        </select>
-        <input type="submit" value="Trouver une salle" class="btn btn-warning btn-lg">
-        <%= link_to "Trouver une salle", timeslots_path %>
-    </form>
+    <fieldset>
+        <select id="sport_element" onchange="getSelectValue();"class="custom-select" width="25%">
+        <option selected="">Choisis ton sport</option>
+        <option value="Football">Football</option>
+        <option value="Basket-ball">Basket-ball</option>
+        <option value="Volley-ball">Volley-ball</option>
+      </select>
+
+<select>
+      <form>
+            <input id="date_element" value="process" type="date" onchange="getSelectValue();">
+      </form>
+     
+</select>
+
+     <select id="ville_element" onchange="getSelectValue();"
+     class="custom-select">
+        <option selected="">Choisis ta ville</option>
+        <option value="Paris">Paris</option>
+        <option value="Lyon">Lyon</option>
+        <option value="Marseille">Marseille</option>
+      </select>
+
+
+      <input type="submit" name="envoyer" value="Trouver une salle" class="btn btn-success btn-lg" onclick="process()"/>
+    
+    </fieldset>
 </div>
-<footer>
+
+
+</body>
+
+<script>
+
+function getSelectValue()
+{
+	var selectedValue = document.getElementById("sport_element").value;
+	console.log(selectedValue);
+
+
+    var selectedValue = document.getElementById("date_element").value;
+	console.log(selectedValue);
+
+
+
+    var selectedValue = document.getElementById("ville_element").value;
+	console.log(selectedValue);
+}
+
+
+    function process()
+    {
+    	var selectedValue = document.getElementById("sport_element").value;
+	console.log(selectedValue); innerHTML = 5 + 6;
+
+        var selectedValue = document.getElementById("date_element").value;
+	console.log(selectedValue);
+
+	    var selectedValue = document.getElementById("ville_element").value;
+	console.log(selectedValue);
+    }
+    <footer>
     <p>Posted by: Guillaume Vidale, Hilal Bushera, Emilio Lecerf, Michael Krasnovsky, Estelle Ballif</p>
     <p>Contact information: <a href="mailto: bookyoursport@yahoo.com">bookyoursport@yahoo.com</a></p>
 </footer>
+
+ 
+</script>
+</html>
+
