@@ -51,14 +51,14 @@ class ScrapLeFive
     # Type de terrains
     # Index 0 for ID : 1 => INDOR
     # Index 1 for ID : 7 => INDOR FILME
-    type_terrains = list.field_with(name: 'reservations_terrains_type')
-    type_terrains.value = type_terrains.options[0]
+    playfield_type = list.field_with(name: 'reservations_terrains_type')
+    playfield_type = playfield_type.options[0]
 
     # Capacité
     # Index 0 for ID : 4 => 2X2 pour PADEL
     # Index 1 for ID : 10 => 10 joueurs pour Foot
-    capacitie = list.field_with(name: 'reservations_capacite')
-    capacitie.value = capacitie.options[1]
+    capacity = list.field_with(name: 'reservations_capacite')
+    capacity.value = capacity.options[1]
 
     # date de reservation
     # ADD VALUE like this : DD/MM/YYYY
@@ -88,11 +88,12 @@ class ScrapLeFive
     # payment.value = payment.options[4]
 
     page = agent.submit(page.forms.last, page.forms.last.button)
-    tab = page.parser.xpath('//html/body/div[1]/div[2]/div/div/div[2]')
-    line_1_date = tab.xpath('div[2]/div[1]').text
-    line_1_time = tab.xpath('div[2]/div[2]').text
-    line_1_duration = tab.xpath('div[2]/div[3]').text
-    line_1_price = tab.xpath('div[2]/div[6]').text
+    board = page.parser.xpath('//html/body/div[1]/div[2]/div/div/div[2]')
+    line_1_date = board.xpath('div[2]/div[1]').text
+    line_1_time = board.xpath('div[2]/div[2]').text
+    line_1_duration = board.xpath('div[2]/div[3]').text
+    line_1_price = board.xpath('div[2]/div[6]').text
+    #center_field.value = center_field.options_with(:text => @city)[0].value
 
 
     return line_1_date, line_1_time, line_1_duration, line_1_price   
