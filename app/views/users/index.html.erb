@@ -14,7 +14,7 @@
                 <h1 class="display-2">Book Your Sport</h1>
                 <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
                 <hr class="my-4">
-                <form action=< %=t imeslots_path %>
+                <form action=< %=timeslots_path %>
                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                     <select class="custom-select" style="width:300px; margin:10px;">
           <option value="0">Football</option>
@@ -28,7 +28,7 @@
           <option value="1">Lyon</option>
           <option value="2">Marseille</option>
         </select>
-                    <input type="submit" value="Trouver une salle" class="btn btn-warning btn-lg">
+                    <%= link_to "Trouver une salle", timeslots_path, class: "btn btn-warning btn-lg" %>
                 </form>
             </div>
         </div>
