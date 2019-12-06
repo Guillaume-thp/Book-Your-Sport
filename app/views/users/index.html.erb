@@ -1,25 +1,41 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html>
 
+<head>
+    <title>Book Your Sport</title>
+</head>
 
-<div class="jumbotron">
-    <br><br><br><br><br><br>
-    <h1 class="display-2">Book Your Sport</h1>
-    <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
-    <hr class="my-4">
-    <form>
-        <select class="custom-select" style="width:300px; margin:10px;">
-          <option value="0">Football</option>
-          <option value="1">Basket-ball</option>
-          <option value="2">Volley-ball</option>
+<body>
+    <div class="home-video-wrapper">
+        <%= video_tag "foot_bg_jumbotron.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
+    </div>
+    <!-- JUMBOTRON START -->
+    <!-- <div class="jumbotron"> -->
+    <div class="container">
+        <div class="vertical-center">
+            <h1 class="display-2 home">Book Your Sport</h1>
+            <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
+            <!-- <br class="form-search" action=<%= timeslots_path %> method="GET"> -->
+            <form class="form-search" action=<%=timeslots_path %> method="GET">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <select id="sport_element" onchange="getSelectValue();" class="custom-select" style="width:300px; margin:10px;">
+          <option selected="">Choisis ton sport</option>
+          <option value="Football">Football</option>
+          <option value="Basket-ball">Basket-ball</option>
+          <option value="Volley-ball">Volley-ball</option>
+          <input id="date_element" type="date" name="date" class="custom-select" style="width:300px; margin:10px;"
+            onchange="getSelectValue();">
+          <input id="time_element" type="time" name="time" class="custom-select" style="width:300px; margin:10px;"
+            onchange="getSelectValue();">
+
         </select>
-        <input type="date">
-        <input type="time">
-        <select class="custom-select" style="width:300px;">
-          <option value="0">Paris</option>
-          <option value="1">Lyon</option>
-          <option value="2">Marseille</option>
+                <select id="ville_element" onchange="getSelectValue();" class="custom-select" style="width:300px;">
+          <option value="Paris">Paris</option>
+          <option value="Lyon">Lyon</option>
+          <option value="Marseille">Marseille</option>
         </select>
+
         <input type="submit" value="Trouver une salle" class="btn btn-warning btn-lg">
         <%= link_to "Trouver une salle", timeslots_path %>
     </form>
@@ -37,3 +53,24 @@
 
 
       </html>
+=======
+                <div class="center">
+                    <input type="submit" value="Trouver une salle" type="button" class="btn btn-warning btn-lg">
+                    <!-- <input type="submit" name="envoyer" value="Trouver une salle" class="btn btn-success btn-lg" onclick="process()" /> -->
+                </div>
+        </div>
+    </div>
+    <div>
+        <span id="sportType"></span>
+        <span id="date-search"></span>
+        <span id="time"></span>
+        <span id="sportType"></span>
+        <span id="villesss"></span>
+    </div>
+    <!-- </div> -->
+    <!-- JUMBOTRON END -->
+</body>
+<script type="text/javascript" src="application.js"></script>
+
+</html>
+>>>>>>> master

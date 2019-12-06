@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
-p id="notice">
+<p id="notice">
+    <%= notice %>
+</p>
 <%= notice %>
     </p>
     <br><br>
@@ -14,6 +16,7 @@ p id="notice">
         </thead>
 
         <tbody>
+
           <% scrap = ScrapLeFive.new.perform %>
 
 <p id="notice">
@@ -41,6 +44,7 @@ p id="notice">
                             <b>
                           <p>&nbsp; &nbsp; DATE : <%=scrap[0][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; HEURE : <%=scrap[1][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DUREE <%=scrap[2][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; PRIX <%=scrap[3][i]%>
+
                           </p>
                     </div>
                 </div>
@@ -48,7 +52,10 @@ p id="notice">
              <% i = i+1 %>
               <% end %>
             <br>
-                    </tbody>
+
+            
+          </tbody>
+
       </table>
   
   
