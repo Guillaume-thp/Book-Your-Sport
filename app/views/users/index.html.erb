@@ -16,8 +16,8 @@
             <h1 class="display-2 home">Book Your Sport</h1>
             <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
             <!-- <br class="form-search" action=<%= timeslots_path %> method="GET"> -->
-            <form class="form-search" action=<%= timeslots_path %> method="GET">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <form class="form-search" action=<%=timeslots_path %> method="GET">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                 <select id="sport_element" onchange="getSelectValue();" class="custom-select" style="width:300px; margin:10px;">
           <option selected="">Choisis ton sport</option>
           <option value="Football">Football</option>
@@ -33,10 +33,10 @@
           <option value="Lyon">Lyon</option>
           <option value="Marseille">Marseille</option>
         </select>
-        <div class="center">
-                <input type="submit" value="Trouver une salle" type="button" class="btn btn-warning btn-lg">
-            <!-- <input type="submit" name="envoyer" value="Trouver une salle" class="btn btn-success btn-lg" onclick="process()" /> -->
-        </div>
+                <div class="center">
+                    <input type="submit" value="Trouver une salle" type="button" class="btn btn-warning btn-lg">
+                    <!-- <input type="submit" name="envoyer" value="Trouver une salle" class="btn btn-success btn-lg" onclick="process()" /> -->
+                </div>
         </div>
     </div>
     <div>
