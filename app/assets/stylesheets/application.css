@@ -43,6 +43,13 @@
   padding: 300px;
 }
 
+.style_dropdown_sport{
+  width:300px; margin:10px  
+}
+.style_dropdown_ville{
+  width:300px
+}
+
 .vertical-center {
   margin: 0;
   position: absolute;

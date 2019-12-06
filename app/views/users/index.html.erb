@@ -29,7 +29,7 @@
                         <select>
                             <input id="time_element" type="time" name="time" onchange="getSelectValue();">
                         </select>
-                        <select id="ville_element" onchange="getSelectValue();"class="custom-select" style="width:300px;">
+                        <select id="city_element" onchange="getSelectValue();"class="custom-select" style="width:300px;">
                             <option value="Paris">Paris</option>
                             <option value="Lyon">Lyon</option>
                             <option value="Marseille">Marseille</option>
@@ -45,47 +45,12 @@
             <span id="sportType"></span>
             <span id="date"></span>
             <span id="time"></span>
-            <span id="sportType"></span>
-            <span id="villesss"></span>
+            <span id="city"></span>
         </div>
         <!-- </div> -->
         <!-- JUMBOTRON END -->
     </body>
-    <script>
-    function getSelectValue()
-    {
-    var sportType = document.getElementById("sport_element").value;console.log(sportType);
-    var date = document.getElementById("date_element").value;
-    console.log(date);
-    var time = document.getElementById("time_element").value;
-    console.log(time);
-    var ville = document.getElementById("ville_element").value;
-    console.log(ville);
     
-    }
-    function process()
-    {
-    var sportType = document.getElementById("sport_element").value;
-    
-    var date = document.getElementById("date_element").value;
-    var time = document.getElementById("time_element").value;
-    
-    var ville = document.getElementById("ville_element").value;
-    
-    display_values(ville, date, time, sportType);
-    
-    }
-    function display_values(villes, date, time, sportType)
-    {
-    document.getElementById("villesss").innerHTML = villes
-    console.log(document.getElementById("villesss") )
-    document.getElementById("sportType").innerHTML =sportType
-    console.log(document.getElementById("sportType") )
-    document.getElementById("date").innerHTML = date
-    console.log(document.getElementById("date") )
-    document.getElementById("time").innerHTML = time
-    console.log(document.getElementById("time") )
-    }
-    
-    </script>
+    <script type="text/javascript" src="application.js"></script>
+   
 </html>
