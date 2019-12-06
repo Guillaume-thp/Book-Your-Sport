@@ -14,7 +14,7 @@
                 <h1 class="display-2 home">Book Your Sport</h1>
                 <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
                 <hr class="my-4">
-                <form action=< %=timeslots_path %>
+                <form action=<%=timeslots_path %>
                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                     <fieldset>
                         <select id="sport_element" onchange="getSelectValue();"class="custom-select" style="width:300px; margin:10px;">
@@ -35,7 +35,8 @@
                             <option value="Marseille">Marseille</option>
                         </select>
                         <input type="submit" name="envoyer" value="Trouver une salle" class="btn btn-success btn-lg" onclick="process()"/>
-                        <%= link_to "Trouver une salle", timeslots_path, class: "btn btn-warning btn-lg" %>
+
+                        
                     </form>
                 </fieldset>
             </div>
@@ -78,7 +79,7 @@
     {
     document.getElementById("villesss").innerHTML = villes
     console.log(document.getElementById("villesss") )
-    document.getElementById("sportType").innerHTML = sportType
+    document.getElementById("sportType").innerHTML =sportType
     console.log(document.getElementById("sportType") )
     document.getElementById("date").innerHTML = date
     console.log(document.getElementById("date") )
