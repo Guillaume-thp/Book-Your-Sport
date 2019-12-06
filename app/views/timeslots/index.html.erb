@@ -14,24 +14,43 @@ p id="notice">
         </thead>
 
         <tbody>
-            <% @timeslots.each do |timeslot| %>
+          <% scrap = ScrapLeFive.new.perform %>
 
+<p id="notice">
+  <%= notice %>
+    </p>
+    <br><br>
+    <h3> La recherche de créneaux avec les critères de l'utilisateur est en bonne voie mais pas encore fonctionnelle.
+    Voici un exemple de créneaux disponibles le 22 Décembre à 10h au centre LeFive d'Annemasse. Ces créneaux sont scrappés en temps réel avant d'être affichés.</h3>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+          <% i = 0 %>
+         
+          <% scrap[0].length.times do%>
                 <div class="col s12 m7">
                     <div class="card horizontal">
                         <div class="card-content">
                             <button type="button" class="btn btn-warning right">Réserver ce créneau</button>
                             <b>
-                          <p>&nbsp; &nbsp; DATE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; HEURE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DUREE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VILLE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PRIX
+                          <p>&nbsp; &nbsp; DATE : <%=scrap[0][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; HEURE : <%=scrap[1][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DUREE <%=scrap[2][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; PRIX <%=scrap[3][i]%>
                           </p>
                     </div>
                 </div>
             </div>
+             <% i = i+1 %>
+              <% end %>
             <br>
-            <% end %>
-          </tbody>
+                    </tbody>
       </table>
+  
   
       <html>
 
