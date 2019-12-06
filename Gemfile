@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-
+gem 'dotenv-rails'
 gem "letter_opener", :group => :development
 gem 'watir'
 gem 'selenium-webdriver'
