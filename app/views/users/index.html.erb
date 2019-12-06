@@ -1,81 +1,74 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title></title>
+    <title>Book Your Sport</title>
 </head>
+
 <body>
- 	
- 	<div class="jumbotron">
-    <h1 class="display-2">Book Your Sport</h1>
-    <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
-    <hr class="my-4">
-    <fieldset>
-        <select id="sport_element" onchange="getSelectValue();"class="custom-select" width="25%">
-        <option selected="">Choisis ton sport</option>
-        <option value="Football">Football</option>
-        <option value="Basket-ball">Basket-ball</option>
-        <option value="Volley-ball">Volley-ball</option>
-      </select>
+    <div class="home-video-wrapper">
+        <%= video_tag "foot_bg_jumbotron.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
+    </div>
 
-<select>
-      <form>
-            <input id="date_element" value="process" type="date" onchange="getSelectValue();">
-      </form>
-     
-</select>
+    <!-- JUMBOTRON START -->
 
-     <select id="ville_element" onchange="getSelectValue();"
-     class="custom-select">
-        <option selected="">Choisis ta ville</option>
-        <option value="Paris">Paris</option>
-        <option value="Lyon">Lyon</option>
-        <option value="Marseille">Marseille</option>
-      </select>
+    <!-- <div class="jumbotron"> -->
+    <div class="container">
+        <div class="vertical-center">
+            <h1 class="display-2 home">Book Your Sport</h1>
+            <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
+            <hr class="my-4">
+            <form action=< %=timeslots_path %>
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <select class="custom-select" style="width:300px; margin:10px;">
+                    <option value="0">Football</option>
+                    <option value="1">Basket-ball</option>
+                    <option value="2">Volley-ball</option>
+                </select>
+                <input type="date" name="date">
+                <input type="time" name="time">
+                <select class="custom-select" style="width:300px;">
+                    <option value="0">Paris</option>
+                    <option value="1">Lyon</option>
+                    <option value="2">Marseille</option>
+                </select>
+                <%= link_to "Trouver une salle", timeslots_path, class: "btn btn-warning btn-lg" %>
+            </form>
+        </div>
+    </div>
+    <!-- </div> -->
 
-
-      <input type="submit" name="envoyer" value="Trouver une salle" class="btn btn-success btn-lg" onclick="process()"/>
-    
-    </fieldset>
-</div>
-
+    <!-- JUMBOTRON END -->
 
 </body>
 
 <script>
+    function getSelectValue() {
+        var selectedValue = document.getElementById("sport_element").value;
+        console.log(selectedValue);
 
-function getSelectValue()
-{
-	var selectedValue = document.getElementById("sport_element").value;
-	console.log(selectedValue);
-
-
-    var selectedValue = document.getElementById("date_element").value;
-	console.log(selectedValue);
-
-
-
-    var selectedValue = document.getElementById("ville_element").value;
-	console.log(selectedValue);
-}
-
-
-    function process()
-    {
-    	var selectedValue = document.getElementById("sport_element").value;
-	console.log(selectedValue); innerHTML = 5 + 6;
 
         var selectedValue = document.getElementById("date_element").value;
-	console.log(selectedValue);
+        console.log(selectedValue);
 
-	    var selectedValue = document.getElementById("ville_element").value;
-	console.log(selectedValue);
+
+
+        var selectedValue = document.getElementById("ville_element").value;
+        console.log(selectedValue);
     }
-    <footer>
-    <p>Posted by: Guillaume Vidale, Hilal Bushera, Emilio Lecerf, Michael Krasnovsky, Estelle Ballif</p>
-    <p>Contact information: <a href="mailto: bookyoursport@yahoo.com">bookyoursport@yahoo.com</a></p>
-</footer>
 
- 
+
+    function process() {
+        var selectedValue = document.getElementById("sport_element").value;
+        console.log(selectedValue);
+        innerHTML = 5 + 6;
+
+        var selectedValue = document.getElementById("date_element").value;
+        console.log(selectedValue);
+
+        var selectedValue = document.getElementById("ville_element").value;
+        console.log(selectedValue);
+    }
 </script>
-</html>
 
+</html>
