@@ -11413,7 +11413,7 @@ table-danger,
     font-size: 0.930125rem;
 }
 
-form {
+.form-devise {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -11427,7 +11427,7 @@ form {
     border-radius: 25px;
 }
 
-.form-search {
+form-search {
     display: flex;
     justify-content: space-around;
     align-items: center;
