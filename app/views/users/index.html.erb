@@ -1,42 +1,103 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Book Your Sport</title>
+    </head>
+    <body>
+        <div class="home-video-wrapper">
+            <%= video_tag "foot_bg_jumbotron.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
+        </div>
+        <!-- JUMBOTRON START -->
+        <!-- <div class="jumbotron"> -->
+        <div class="container center">
+            <div class="vertical-center">
+                <h1 class="display-2 home">Book Your Sport</h1>
+                <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
+                <!-- <br class="form-search" action=<%= timeslots_path %> method="GET"> -->
+                <form class="form-search" action=<%=timeslots_path %> method="GET">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-<head>
-    <title>Book Your Sport</title>
-</head>
 
-<body>
-    <div class="home-video-wrapper">
-        <%= video_tag "foot_bg_jumbotron.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
-    </div>
-    <!-- JUMBOTRON START -->
-    <!-- <div class="jumbotron"> -->
-    <div class="container">
-        <div class="vertical-center">
-            <h1 class="display-2 home">Book Your Sport</h1>
-            <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
-            <!-- <br class="form-search" action=<%= timeslots_path %> method="GET"> -->
-            <form class="form-search" action=<%=timeslots_path %> method="GET">
-                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                <select id="sport_element" onchange="getSelectValue();" class="custom-select" style="width:300px; margin:10px;">
-          <option selected="">Choisis ton sport</option>
-          <option value="Football">Football</option>
-          <option value="Basket-ball">Basket-ball</option>
-          <option value="Volley-ball">Volley-ball</option>
-          <input id="date_element" type="date" name="date" class="custom-select" style="width:300px; margin:10px;"
-            onchange="getSelectValue();">
-          <input id="time_element" type="time" name="time" class="custom-select" style="width:300px; margin:10px;"
-            onchange="getSelectValue();">
-        </select>
-                <select id="ville_element" onchange="getSelectValue();" class="custom-select" style="width:300px;">
-          <option value="Paris">Paris</option>
-          <option value="Lyon">Lyon</option>
-          <option value="Marseille">Marseille</option>
-        </select>
-                <div class="center">
-                    <input type="submit" value="Trouver une salle" type="button" class="btn btn-warning btn-lg">
-                    <!-- <input type="submit" name="envoyer" value="Trouver une salle" class="btn btn-success btn-lg" onclick="process()" /> -->
-                </div>
+                    <select id="sport_element" onchange="getSelectValue();" class="custom-select" style="width:200px; margin:10px;">
+                        <option selected="">Choisis ton sport</option>
+                        <option value="Football">Football</option>
+                   </select>
+
+
+
+   <select id="ville_element" onchange="getSelectValue();" class="custom-select" style="width:300px;">
+                        <option selected="">Choisis ta ville:</option>
+                        <option value="Asnieres-Gennevilliers">Asnieres-Gennevilliers</option>
+                        <option value="Aubervilliers">Aubervilliers</option>
+                        <option value="Bezon">Bezon</option>
+                        <option value="Bobigny">Bobigny</option>
+                        <option value="Carrière sous poissy">Carrière sous poissy</option>
+                        <option value="Champigny">Champigny</option>
+                        <option value="Créteil">Créteil</option>
+                        <option value="Guyancourt">Guyancourt</option>
+                        <option value="Evry-Courcourrones">Evry-Courcourrones</option>
+                        <option value="La Défense">La Défense</option>
+                        <option value="Marne La Vallée">Marne La Vallée</option>
+                        <option value="Meudon">Meudon</option>
+                        <option value="Orsay">Orsay</option>
+                        <option value="Paris 13">Paris 13</option>
+                        <option value="Porte d'aubervilliers">Porte d'aubervilliers</option>
+                        <option value="Porte d'Ivry">Porte d'Ivry</option>
+                        <option value="Puteaux">Puteaux</option>
+                    </select>
+
+
+                       
+                        <input id="date_element" type="date" name="date" class="custom-select" style="width:200px; margin:10px;"
+                        onchange="getSelectValue();">
+                        
+                        <select name ="time[choice]" id="time_element" onchange="getSelectValue();" class="custom-select" style="width:110px;">
+                            <option selected="a">Début:</option>
+                            <option value="10:00">10:00</option>
+                            <option value="10:30">10:30</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:30">11:30</option>
+                            <option value="12:00">12:00</option>
+                            <option value="12:30">12:30</option>
+                            <option value="13:00">13:00</option>
+                            <option value="13:30">13:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:30">14:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="15:30">15:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:00">16:00</option>
+                            <option value="16:30">16:30</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:30">18:30</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:30">20:30</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:30">21:30</option>
+                            <option value="22:00">22:00</option>
+                            <option value="22:30">22:30</option>
+                        </select>
+
+                        <select name ="time[choice]" id="time_element" onchange="getSelectValue();" class="custom-select" style="width:110px;">
+                            <option selected="">Durée:</option>
+                            <option value="1:00">1h00</option>
+                            <option value="1:30">1h30</option>
+                            <option value="2:00">2h00</option>
+                        </select>
+                    
+
+                 
+
+
+                    <div class="center">
+                        <input type="submit" value="Trouver une salle" class="btn btn-warning btn-lg">
+                    </div>
+                </form>
+            </div>
+            <div class="center">
+                <!-- <input type="submit" name="envoyer" value="Trouver une salle" class="btn btn-success btn-lg" onclick="process()" /> -->
+            </div>
         </div>
     </div>
     <div>
@@ -49,6 +110,4 @@
     <!-- </div> -->
     <!-- JUMBOTRON END -->
 </body>
-<script type="text/javascript" src="application.js"></script>
-
 </html>
