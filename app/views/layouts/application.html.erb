@@ -14,8 +14,8 @@
     <nav class="navbar navbar-expand topnav">
         <%= image_tag("logo_BYS.png", :alt => "BYS logo", :class => "img-s") %>
             <%=link_to "Accueil", root_path, class: "btn btn-inverse button" %>
-                <%= link_to "L'équipe", root_path, class: "btn btn-inverse" %>
-                    <%= link_to "A propos", root_path, class: "btn btn-inverse" %>
+                <%= link_to "L'équipe", static_pages_team_path, class: "btn btn-inverse" %>
+                    <%= link_to "A propos", static_pages_about_path, class: "btn btn-inverse" %>
                         <ul class="nav ml-auto">
                             <% if user_signed_in? %>
                                 <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
