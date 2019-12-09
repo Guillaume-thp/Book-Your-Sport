@@ -40,6 +40,8 @@
     padding: 300px;
 }
 
+.Montserrat {font-family: 'Montserrat', sans-serif;}
+
 .vertical-center {
     margin: 0;
     position: absolute;
@@ -5414,7 +5416,7 @@ input[type="button"].btn-block {
 }
 
 .card-title {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem; font-size: 20px;
 }
 
 .card-subtitle {
@@ -11503,3 +11505,20 @@ input[type="date-search"] {
 h1.home {
     color: white;
 }
+
+
+
+
+
+
+.bodyx {
+  display: flex;
+  height: 100px;
+  width: 1200px;
+  background-color: ;
+  border-radius: 10px;
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px; ">
+}
+
