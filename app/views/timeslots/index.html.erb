@@ -17,7 +17,11 @@
 
         <tbody>
 
+<<<<<<< HEAD
           <% #scrap = ScrapLeFive.new.perform %>
+=======
+          <% scrap = ScrapLeFive.new.perform %>
+>>>>>>> master
 
 <p id="notice">
   <%= notice %>
@@ -36,21 +40,35 @@
         <tbody>
           <% i = 0 %>
          
+<<<<<<< HEAD
           <% #scrap[0].length.times do%>
+=======
+          <% scrap[0].length.times do%>
+>>>>>>> master
                 <div class="col s12 m7">
                     <div class="card horizontal">
                         <div class="card-content">
                             <button type="button" class="btn btn-warning right">Réserver ce créneau</button>
                             <b>
+<<<<<<< HEAD
                           <p>&nbsp; &nbsp; DATE : <%#=scrap[0][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; HEURE : <%#=scrap[1][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DUREE <%#=scrap[2][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; PRIX <%#=scrap[3][i]%>
+=======
+                          <p>&nbsp; &nbsp; DATE : <%=scrap[0][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; HEURE : <%=scrap[1][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DUREE <%=scrap[2][i]%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; PRIX <%=scrap[3][i]%>
+>>>>>>> master
 
                           </p>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
              <% #i = i+1 %>
               <% #end %>
+=======
+             <% i = i+1 %>
+              <% end %>
+>>>>>>> master
             <br>
 
             
