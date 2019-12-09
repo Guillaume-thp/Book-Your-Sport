@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/static_pages/team', to: 'static_pages#team'
+  get '/static_pages/about', to: 'static_pages#about'
   devise_for :users
   resources :timeslots
   resources :users
