@@ -10,43 +10,44 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require_tree .
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 
-function getSelectValue()
-    {
-    var sportType = document.getElementById("sport_element").value;console.log(sportType);
+
+
+function getSelectValue() {
+    var sportType = document.getElementById("sport_element").value;
+    console.log(sportType);
     var date = document.getElementById("date_element").value;
     console.log(date);
     var time = document.getElementById("time_element").value;
     console.log(time);
     var city = document.getElementById("city_element").value;
     console.log(city);
-    
-    }
-    function process()
-    {
+
+}
+
+function process() {
     var sportType = document.getElementById("sport_element").value;
-    
+
     var date = document.getElementById("date_element").value;
     var time = document.getElementById("time_element").value;
-    
+
     var city = document.getElementById("city_element").value;
-    
+
     display_values(city, date, time, sportType);
-    
-    }
-    function display_values(city, date, time, sportType)
-    {
-    document.getElementById("city").innerHTML =city
-    console.log(document.getElementById("city") )
-    document.getElementById("sportType").innerHTML =sportType
-    console.log(document.getElementById("sportType") )
+
+}
+
+function display_values(city, date, time, sportType) {
+    document.getElementById("city").innerHTML = city
+    console.log(document.getElementById("city"))
+    document.getElementById("sportType").innerHTML = sportType
+    console.log(document.getElementById("sportType"))
     document.getElementById("date").innerHTML = date
-    console.log(document.getElementById("date") )
+    console.log(document.getElementById("date"))
     document.getElementById("time").innerHTML = time
-    console.log(document.getElementById("time") )
-    }
-    
+    console.log(document.getElementById("time"))
+}
