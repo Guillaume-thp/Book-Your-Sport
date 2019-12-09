@@ -1,13 +1,14 @@
 require 'nokogiri'
 require 'mechanize'
 
-
+#ScrapLeFive.new.perform
 class ScrapLeFive
 
   def initialize
   end
   
-  def perform#(city,time,duration)
+  def perform(city,time,duration,date)
+     puts date
     
 
     agent = Mechanize.new
@@ -19,6 +20,8 @@ class ScrapLeFive
 
     email_field.value = ENV['USER_EMAIL'] # Set the value in the email field
     password_field.value = ENV['USER_PASSWORD'] # Set the value in the password field
+  
+    
     page = agent.submit(page.forms.last) # Submit the result for connect in var
 
     # Test for detect link with Réserver
@@ -31,10 +34,11 @@ class ScrapLeFive
     # test for show if i change url
     # book_link.uri
     #  => #<URI::HTTPS https://www.soccerpark.fr/index/nocentres/index.html?url_redirect=https://www.soccerpark.fr/reservations/>
-
+    
     center_field = page.form.field_with(name: 'centres_id')
     # center_field.value = "39"
-    center_field.value = center_field.options[1]
+    center_field.value = center_field.option_with(:text =>"LE FIVE #{city}")
+
     page = agent.submit(page.form)
 
     list = page.forms.last
@@ -45,7 +49,7 @@ class ScrapLeFive
     type_sport = list.field_with(name: 'reservations_terrains_typesport')
     
     
-    type_sport.value = type_sport.options[1]
+    type_sport.value = type_sport.option_with(:text => "Foot")
 
     # Type de terrains
     # Index 0 for ID : 1 => INDOR
@@ -57,13 +61,17 @@ class ScrapLeFive
     # Index 0 for ID : 4 => 2X2 pour PADEL
     # Index 1 for ID : 10 => 10 joueurs pour Foot
     capacity = list.field_with(name: 'reservations_capacite')
-    capacity.value = capacity.options[1]
+    capacity.value = capacity.option_with(:text => "10 joueurs (10)")
 
     # date de reservation
     # ADD VALUE like this : DD/MM/YYYY
     # EX 28/12/2019
-    date = list.field_with(name: 'reservations_date')
-    date.value = '21/12/2019'
+
+    play_date = list.field_with(name: 'reservations_date')
+         
+           
+    play_date.value = '21/12/2019' #Date.strptime("#{date}").strftime("%m/%d/%Y")
+     
 
     # Heure de début de séance (10:00 à 22:00)
     # Index 0 => 10:00
@@ -73,21 +81,22 @@ class ScrapLeFive
     # Index 24 => 22:00
 
     start = list.field_with(name: 'reservations_debut')
-    start.value = start.options[0]
+    start.value = start.option_with(:text => "#{time}")
 
     # Durée de la séance (1:00, 1:30, ou 2:00)
     # Index 0 => 1:00
     # Index 1 => 1:30
     # Index 2 => 2:00
-    duration = list.field_with(name: 'reservations_duree')
-    duration.value = duration.options[0]
-
+    play_duration = list.field_with(name: 'reservations_duree')
+    play_duration.value = play_duration.option_with(:text => "#{duration}")
+    
     # Type de paiement ()
     # payment = list.field_with(:name => "reservations_typepaiement")
     # payment.value = payment.options[4]
 
     page = agent.submit(page.forms.last, page.forms.last.button)
     board = page.parser.xpath('//html/body/div[1]/div[2]/div/div/div[2]')
+              
     # line_1_date = board.xpath('div[2]/div[1]').text
     # line_1_time = board.xpath('div[2]/div[2]').text
     # line_1_duration = board.xpath('div[2]/div[3]').text
