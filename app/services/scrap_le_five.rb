@@ -70,8 +70,8 @@ class ScrapLeFive
     play_date = list.field_with(name: 'reservations_date')
          
            
-    play_date.value = '21/12/2019' #Date.strptime("#{date}").strftime("%m/%d/%Y")
-     
+    play_date.value = Date.strptime("#{date}").strftime("%d/%m/%Y") #'21/12/2019' 
+ 
 
     # Heure de début de séance (10:00 à 22:00)
     # Index 0 => 10:00
