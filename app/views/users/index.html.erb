@@ -2,27 +2,44 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Book Your Sport</title>
 </head>
 
 <body>
+
     <!-- JUMBOTRON START -->
+
     <div class="jumbotron">
+
+        <!-- VIDEO -->
+
         <div class="home-video-wrapper">
             <%= video_tag "foot_bg_jumbotron.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
         </div>
+
+        <!-- JUMBOTRON HEAD -->
+
         <div class="center">
             <div class="vertical-center">
                 <h1 class="display-2 home">Book Your Sport</h1>
                 <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
-                <!-- <br class="form-search" action=<%= timeslots_path %> method="GET"> -->
+
+                <!-- RESEARCH FORMULA -->
+
                 <form class="form-search" action=<%=timeslots_path %> method="GET">
                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+                    <!-- SPORT -->
+
                     <select id="sport_element" onchange="getSelectValue();" class="custom-select"
                         style="width:200px; margin:10px;">
                         <option selected="">Sport</option>
                         <option value="Football">Football</option>
                     </select>
+
+                    <!-- CITIES -->
+
                     <select id="ville_element" onchange="getSelectValue();" class="custom-select" style="width:300px;">
                         <option selected="">Ville</option>
                         <option value="Asnieres-Gennevilliers">Asnieres-Gennevilliers</option>
@@ -43,11 +60,14 @@
                         <option value="Porte d'Ivry">Porte d'Ivry</option>
                         <option value="Puteaux">Puteaux</option>
                     </select>
+
+                    <!-- DATE BOOKING -->
+
                     <input id="date_element" type="date" name="date" class="custom-select"
                         style="width:200px; margin:10px;" onchange="getSelectValue();">
                     <select name="time[choice]" id="time_element" onchange="getSelectValue();" class="custom-select"
                         style="width:110px;">
-                        <option selected="a">Début</option>
+                        <option selected="">Début</option>
                         <option value="10:00">10:00</option>
                         <option value="10:30">10:30</option>
                         <option value="11:00">11:00</option>
@@ -73,6 +93,9 @@
                         <option value="22:00">22:00</option>
                         <option value="22:30">22:30</option>
                     </select>
+
+                    <!-- BOOKING DURATION -->
+
                     <select name="time[choice]" id="time_element" onchange="getSelectValue();" class="custom-select"
                         style="width:110px;">
                         <option selected="">Durée</option>
@@ -80,6 +103,9 @@
                         <option value="1:30">1h30</option>
                         <option value="2:00">2h00</option>
                     </select>
+
+                    <!-- BUTTON FOR SEARCH -->
+                    
                     <div class="center">
                         <input type="submit" value="Trouver une salle" class="btn btn-warning btn-lg">
                     </div>
@@ -87,14 +113,17 @@
             </div>
         </div>
     </div>
+
     <!-- JUMBOTRON END -->
+
     <div>
         <span id="sportType"></span>
         <span id="date-search"></span>
         <span id="time"></span>
         <span id="sportType"></span>
-        <span id="villesss"></span>
+        <span id="villes"></span>
     </div>
+
 </body>
 
 </html>
