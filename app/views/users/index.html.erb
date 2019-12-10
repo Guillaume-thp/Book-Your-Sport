@@ -1,5 +1,21 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Book Your Sport</title>
+    </head>
+    <body>
+        <div class="home-video-wrapper">
+            <%= video_tag "foot_bg_jumbotron.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
+        </div>
+        <!-- JUMBOTRON START -->
+        <!-- <div class="jumbotron"> -->
+        <div class="container center">
+            <div class="vertical-center">
+                <h1 class="display-2 home">Book Your Sport</h1>
+                <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
+                <!-- <br class="form-search" action=<%= timeslots_path %> method="GET"> -->
+                <form class="form-search" action=<%=timeslots_path %> method="GET">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
 <head>
     <meta charset="UTF-8">

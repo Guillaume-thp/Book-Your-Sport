@@ -43,12 +43,27 @@
   padding: 300px;
 }
 
+.Montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .vertical-center {
   margin: 0;
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.timeslot-style {
+    display: flex;
+    height: 100px;
+    width: 1200px;
+    border-radius: 1000px;
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+    word-spacing: 120px;
 }
 
 .center {
