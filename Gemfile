@@ -3,15 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-
-
-gem 'watir'
-gem 'selenium-webdriver'
-gem 'faker'
-gem 'table_print'
-gem 'devise'
-gem 'dotenv-rails'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
@@ -57,6 +48,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # For better error in rails
+  gem "better_errors", "~> 2.5"
+  gem "binding_of_caller", "~> 0.8.0"
 end
 
 group :test do
@@ -70,8 +64,22 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
-
+# For scrapping
 gem "mechanize", "~> 2.7"
-
 gem "nokogiri", "~> 1.10"
+gem "watir", "~> 6.16"
+
+# For seed
+gem "faker", "~> 2.8"
+
+# For table
+gem "table_print", "~> 1.5"
+
+# For connection users
+gem "devise", "~> 4.7"
+
+# For secrets
+gem "dotenv-rails", "~> 2.7"
+
+# For tests
+gem "pry", "~> 0.12.2"
