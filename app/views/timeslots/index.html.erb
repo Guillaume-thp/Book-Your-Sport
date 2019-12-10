@@ -12,9 +12,12 @@
         </p>
         <%= notice %>
             </p>
-            <br><br>
-            <h1 class="Montserrat">Créneaux disponibles</h1>
-            <br>
+            <h1 class="Montserrat">Créneaux disponibles pour la ville de
+                <%=params[:city][:choice]%> à
+                    <%=params[:time][:choice]%>, durée de
+                        <%=params[:duration][:choice]%> à la date du
+                            <%=params[:date]%>
+            </h1>
             <table>
                 <thead>
                     <tr>
@@ -51,10 +54,8 @@
                                         <%=scrap[0][i]%>
                                             <%=scrap[1][i]%>
                                                 <%=scrap[2][i]%>
-                                                    <%=scrap[3][i]%>
-
-
-                                                        <button type="button" class="btn btn-warning right">Réserver</button>
+                                                    <%=scrap[3][i] %>
+                                                        <%= link_to "Réserver", new_charge_path, class: "btn btn-warning right" %>
 
                                     </h4>
                                 </div>

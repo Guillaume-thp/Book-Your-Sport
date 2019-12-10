@@ -69,6 +69,10 @@
     word-spacing: 120px;
 }
 
+:not(.p) {
+    word-spacing;
+}
+
 .center {
     /* height: 100%; */
     display: flex;
