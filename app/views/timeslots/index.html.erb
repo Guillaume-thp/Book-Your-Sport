@@ -42,8 +42,6 @@
                                     <% scrap[0].length.times do%>
                                         </div>
                                         </div>
-
-                                        <br>
                             </tbody>
                         </table>
                         <div class="center">
@@ -54,7 +52,7 @@
                                         <%=scrap[0][i]%>
                                             <%=scrap[1][i]%>
                                                 <%=scrap[2][i]%>
-                                                    <%=scrap[3][i] %>
+                                                    <%=scrap[3][i].delete(' ') %>
                                                         <%= link_to "Réserver", new_charge_path, class: "btn btn-warning right" %>
 
                                     </h4>
