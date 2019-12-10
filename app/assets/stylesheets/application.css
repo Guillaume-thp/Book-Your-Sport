@@ -43,6 +43,13 @@
   padding: 300px;
 }
 
+.front-size { 
+    font-size: 20px;
+    margin-right: 200px;
+    margin-top:  15px;
+    
+}
+
 .Montserrat {
     font-family: 'Montserrat', sans-serif;
 }
@@ -57,8 +64,8 @@
 
 .timeslot-style {
     display: flex;
-    height: 100px;
-    width: 1200px;
+    height: 80px;
+    width: 1000px;
     border-radius: 1000px;
     transition: 0.4s ease-out;
     position: relative;
