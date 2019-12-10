@@ -7589,7 +7589,9 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #4582ec !important;
+    background: url('trans-tile-feature-nav.png') !important;
+    position: fixed;
+    width: 100%;
 }
 
 a.bg-primary:hover,
@@ -11547,7 +11549,6 @@ footer {
 input[type="date"],
 input[type="time"] {
   padding: 0.4em;
-  border-radius: 10px;
 }
 
 input[type="date-search"] {
