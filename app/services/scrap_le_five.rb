@@ -18,8 +18,8 @@ class ScrapLeFive
     email_field = login_form.field_with(name: 'users_email') # Field for user email
     password_field = login_form.field_with(name: 'users_password') # Field for password
 
-    email_field.value = ENV['USER_EMAIL'] # Set the value in the email field
-    password_field.value = ENV['USER_PASSWORD'] # Set the value in the password field
+    email_field.value = ENV['LEFIVE_EMAIL'] # Set the value in the email field
+    password_field.value = ENV['LEFIVE_PASSWORD'] # Set the value in the password field
   
     
     page = agent.submit(page.forms.last) # Submit the result for connect in var

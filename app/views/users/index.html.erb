@@ -12,7 +12,7 @@
 
     <div class="center">
         <div class="vertical-center">
-            <h1 class="display-1 home">Book Your Sport</h1>
+            <h1 class="display-2 home">Book Your Sport</h1>
             <p class="lead text-center">Réserve ton terrain en quelques clics!</p>
 
             <!-- RESEARCH FORMULA -->
@@ -33,7 +33,7 @@
                 <select id="ville_element" name="city[choice]" onchange="getSelectValue();" class="custom-select"
                     style="width:300px;">
                     <option selected="">Ville</option>
-                    <option value="Asnieres-Gennevilliers">Asnieres-Gennevilliers</option>
+                    <option value="Asnières">Asnieres-Gennevilliers</option>
                     <option value="Villette">Aubervilliers</option>
                     <option value="Bezons">Bezons</option>
                     <option value="Bobigny">Bobigny</option>
@@ -41,7 +41,7 @@
                     <option value="Champigny">Champigny</option>
                     <option value="Créteil">Créteil</option>
                     <option value="Guyancourt">Guyancourt</option>
-                    <option value="Evry-Courcourrones">Evry-Courcourrones</option>
+                    <option value="Evry-Courcouronnes">Evry-Courcourrones</option>
                     <option value="La Défense">La Défense</option>
                     <option value="Marne La Vallée">Marne La Vallée</option>
                     <option value="Meudon">Meudon</option>
@@ -56,6 +56,8 @@
 
                 <input id="date_element" type="date" name="date" class="custom-select" style="width:200px; margin:10px;"
                     onchange="getSelectValue();">
+
+                <!-- TIME BOOKING -->
 
                 <select name="time[choice]" id="time_element" onchange="getSelectValue();" class="custom-select"
                     style="width:110px;">
@@ -88,12 +90,12 @@
 
                 <!-- BOOKING DURATION -->
 
-                <select name="duration[choice]" id="time_element" onchange="getSelectValue();" class="custom-select"
+                <select name="duration[choice]" id="duration_element" onchange="getSelectValue();" class="custom-select"
                     style="width:110px;">
-                    <option selected="">Durée</option>
-                    <option value="1:00">1h00</option>
-                    <option value="1:30">1h30</option>
-                    <option value="2:00">2h00</option>
+                    <option selected="">Durée:</option>
+                    <option value="01:00">1h00</option>
+                    <option value="01:30">1h30</option>
+                    <option value="02:00">2h00</option>
                 </select>
 
                 <!-- BUTTON FOR SEARCH -->
@@ -115,5 +117,3 @@
     <span id="sportType"></span>
     <span id="villes"></span>
 </div>
-
-<!-- <div class="loader"></div>  -->
