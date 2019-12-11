@@ -10,7 +10,7 @@
 </head>
 <header>
     <!-- START NAVBAR -->
-    <% if current_page?('/') %>
+    <% if current_page?('/') || current_page?('/users/sign_up') || current_page?('/users/sign_in') %>
     <nav class="navbar navbar-expand topnav bg-primary">
         <% else %>
         <nav class="navbar navbar-expand topnav bg-secondary">
