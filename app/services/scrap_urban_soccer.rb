@@ -4,7 +4,7 @@ class ScrapUrbanSoccer
     end
   
   
-    def perform
+    def perform(city) aaaaa
   
         opts = {
       headless: true
@@ -14,20 +14,25 @@ class ScrapUrbanSoccer
       opts.merge!( options: {binary: chrome_bin})
     end 
   
-  browser = Watir::Browser.new :chrome, opts
+  browser = Watir::Browser.new :chrome #, opts
   browser.goto 'https://my.urbansoccer.fr/user?goto=reserver'
   email_field = browser.text_field(type: 'email')
   password_field = browser.text_field(type: 'password')
   email_field.set(ENV['URBAN_EMAIL'])
   password_field.set(ENV['URBAN_PASSWORD'])
+ 
+  
   password_field.send_keys(:enter)
+ 
   
   idf = browser.path(id: "IDF")
-  idf.double_click
+  sleep rand(0.1..0.3)
+  idf.click
   
-  puteaux = browser.div(text: "Puteaux")
+  puteaux = browser.div(text: "#{city}")
   
-  puteaux.wait_until(&:present?).double_click
+  sleep rand(0.1..0.3)
+  puteaux.wait_until(&:present?).click
   # cliquer sur la fleche droite du calendrier pour le mois suivant
    #browser.span(class:["DayPicker-NavButton", "DayPicker-NavButton--next"]).click
   
