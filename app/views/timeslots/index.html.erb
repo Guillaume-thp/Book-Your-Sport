@@ -22,12 +22,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% #scrap = ScrapLeFive.new.perform %>
+                    <% scrap = ScrapLeFive.new.perform(params[:city][:choice], params[:time][:choice], params[:duration][:choice],params[:date]) %>
                         <p id="notice">
                             <%= notice %>
                         </p>
                         <br><br>
-
                         <br>
                         <table>
                             <thead>
@@ -37,37 +36,35 @@
                             </thead>
                             <tbody>
                                 <% i = 0 %>
-
-                                    <% #scrap[0].length.times do%>
-
+                                    <% scrap[0].length.times do%>
                                         </div>
                                         </div>
-                                        <% #i = i+1 %>
-                                            <% #end %>
-                                                <br>
 
+                                        <br>
                             </tbody>
                         </table>
                         <div class="center">
                             <div class=" timeslot-style card border-warning mb-3 center">
                                 <div class="card-body center">
-                                    <h4 class="card-title center ">
-                                        22/12/2019
-                                        <%#=scrap[0][i]%> 13h00
-                                            <%#=scrap[1][i]%> 1h30
-                                                <%#=scrap[2][i]%> 80€
-                                                    <%#=scrap[3][i]%>
+                                    <h4 class="card-title center front-size ">
+
+                                        <%=scrap[0][i]%>
+                                            <%=scrap[1][i]%>
+                                                <%=scrap[2][i]%>
+                                                    <%=scrap[3][i]%>
+
+
+                                                        <button type="button" class="btn btn-warning right">Réserver</button>
+
                                     </h4>
-                                    <button type="button" class="btn btn-warning right">Réserver</button>
                                 </div>
                             </div>
                         </div>
-
-
+                        <% i = i+1 %>
+                            <% end %>
     </body>
 
     </html>
-
     <html>
 
     </html>
