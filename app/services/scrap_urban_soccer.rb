@@ -1,7 +1,7 @@
 
 class ScrapUrbanSoccer
  class << self
-    def perform(city,time,duration)
+    def perform(city,time,duration,date)
     
           opts = {
         headless: true
@@ -53,9 +53,15 @@ class ScrapUrbanSoccer
       browser.option(value:duration).click
      
       browser.span(text:"Intérieur").click
-      binding.irb
-      date = browser.div(text: "21") # Choisir le jour. Faire en dernier sinon bug sur chrome
-      date.click
+     
+
+      if Date.strptime("#{date}").month != Date.current.month
+
+        browser.span(class:["DayPicker-NavButton", "DayPicker-NavButton--next"]).click
+      end
+      play_date = browser.div(text: "#{Date.strptime(date).day}") # Choisir le jour. Faire en dernier sinon bug sur chrome
+      play_date.click
+      #ScrapUrbanSoccer.perform("Meudon","14h00","01:00","2019-12-30")
   
   
   
