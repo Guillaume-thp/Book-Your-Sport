@@ -1,24 +1,20 @@
-# README
+Welcome to our README.ME.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README will help you understand our "Book Your Sport Application", which is the final project of our The Hacking Project 11 weeks intensive training.
 
-Things you may want to cover:
+Book your Sport is a web application that allows users to have in a glance all the available timeslots of the sport selected, in Paris and the immediate suburbs.
 
-* Ruby version
+This first version only allows users to choose "Football", but the main objective in the future will be to develop it for other team sports, like tennis, padel and badminton.
 
-* System dependencies
+Some conditions need to be satisfied before trying to run the app:
 
-* Configuration
+1. You need to have or create an account in https://my.urbansoccer.fr/user and https://www.lefive.fr/identifiez-vous/ 
+2. 
 
-* Database creation
+You can have a look by cloning it in your local environment, then by running the following commands in your terminal:
 
-* Database initialization
+1. bundle install
+2. rails db:reset
+3. rails s
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Then go on your navigator and run http://localhost:3000/.
