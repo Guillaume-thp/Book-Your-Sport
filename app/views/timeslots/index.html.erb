@@ -49,11 +49,11 @@
                                 <div class="card-body center">
                                     <h4 class="card-title center front-size ">
 
-                                        <%=scrap[0][i]%>
-                                            <%=scrap[1][i]%>
-                                                <%=scrap[2][i]%>
-                                                    <%=scrap[3][i].delete(' ') %>
-                                                        <%= link_to "Réserver", new_charge_path, class: "btn btn-warning right" %>
+                                        <%= date = scrap[0][i]%>
+                                            <%= hour = scrap[1][i]%>
+                                                <%= duration = scrap[2][i]%>
+                                                    <%= price = scrap[3][i].delete(' ') %>
+                                                        <%= link_to "Réserver", new_charge_path(date:date, hour:hour, duration:duration, price:price), class: "btn btn-warning" %>
 
                                     </h4>
                                 </div>
