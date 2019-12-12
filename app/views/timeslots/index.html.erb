@@ -12,11 +12,10 @@
         </p>
         <%= notice %>
             </p>
-            <h1 class="Montserrat">Créneaux disponibles pour la ville de
+            <h1 class="Montserrat">Voici les créneaux disponibles pour la ville de
                 <%=params[:city][:choice]%> à
-                    <%=params[:time][:choice]%>, durée de
-                        <%=params[:duration][:choice]%> à la date du
-                            <%=params[:date]%>
+                    <%=params[:time][:choice]%> le
+                        <%=params[:date]%>
             </h1>
             <table>
                 <thead>
@@ -52,8 +51,8 @@
                                         <%= date = scrap[0][i]%>
                                             <%= hour = scrap[1][i]%>
                                                 <%= duration = scrap[2][i]%>
-                                                    <%= price = scrap[3][i].delete(' ') %>
-                                                        <%= link_to "Réserver", new_charge_path(date:date, hour:hour, duration:duration, price:price), class: "btn btn-warning" %>
+                                                    <%= amount = scrap[3][i].delete(' ') %>
+                                                        <%= link_to "Réserver", new_charge_path(date:date, hour:hour, duration:duration, amount:amount), class: "btn btn-warning" %>
 
                                     </h4>
                                 </div>
