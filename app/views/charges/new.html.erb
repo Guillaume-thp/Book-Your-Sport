@@ -1,6 +1,6 @@
 <div class="center">
 
-    <%= form_tag charges_path do %>
+    <%= form_tag charges_path(:date => params[:date],:hour => params[:hour], :duration => params[:duration], :price => params[:price]) do %>
         <article>
             <% if flash[:error].present? %>
                 <div id="error_explanation">
@@ -20,6 +20,7 @@
         </label>
         </article>
 
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Réservez votre créneau" data-currency="EUR" data-amount="<%= params[:amount].to_f*100 %>" data-locale="auto"></script>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Réservez votre créneau" data-currency="EUR" data-amount="<%= params[:amount].to_f*100 %>" data-locale="auto">
+        </script>
         <% end %>
 </div>
