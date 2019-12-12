@@ -20,6 +20,6 @@
         </label>
         </article>
 
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Réservez votre créneau" data-amount="<%= params[:amount] %>" data-locale="auto"></script>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Réservez votre créneau" data-currency="EUR" data-amount="<%= params[:amount].to_f*100 %>" data-locale="auto"></script>
         <% end %>
 </div>
