@@ -11,7 +11,7 @@ class ScrapUrbanSoccer
         opts.merge!( options: {binary: chrome_bin})
       end 
   
-      browser = Watir::Browser.new :chrome  #, opts
+      browser = Watir::Browser.new :chrome, opts
       browser.goto 'https://my.urbansoccer.fr/user?goto=reserver'
       email_field = browser.text_field(type: 'email')
       password_field = browser.text_field(type: 'password')
@@ -38,7 +38,7 @@ class ScrapUrbanSoccer
   #dropdown heuresend_keys('\n')
   
  
-  
+      time = time.sub!(":","h")
       browser.option(value:time).click
       
   #dropdown durée
@@ -69,7 +69,7 @@ class ScrapUrbanSoccer
      
   
       
-      no_timeslot_message = "Désolé, il n'y a aucun créneau disponible correspondant a vos critères"
+      no_timeslot_message = "Désolé, il n'y a aucun créneau disponible correspondant à vos critères sur Urban Soccer"
       sleep 1
     
         if browser.div(class:"liste-attente").exist? == true
