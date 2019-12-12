@@ -10,14 +10,14 @@
                 </div>
                 <% end %>
                     <label class="amount">
-      
-    <span>Etes-vous sûr de bien vouloir réserver le créneau du <%= params[:date]%></span>
-    <span>à <%= params[:hour]%></span>
-    <span>durant <%= params[:duration]%></span>
-    <span>h, pour le prix de <%= params[:amount]%></span>
-      
-      
-    </label>
+
+
+            <span>Confirmer votre réservation du <%= params[:date]%> </span>
+            <span>à <%= params[:hour]%></span>
+            <span>h, durant <%= params[:duration]%></span>
+            <span>h pour le prix de <%= params[:amount]%></span>
+
+        </label>
         </article>
 
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Réservez votre créneau" data-amount="<%= params[:amount] %>" data-locale="auto"></script>
