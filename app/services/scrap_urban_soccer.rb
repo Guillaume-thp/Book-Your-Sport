@@ -1,8 +1,8 @@
 
 class ScrapUrbanSoccer
- class << self
+ 
     def perform(city,time,duration,date)
-    
+      return nil if ScrapUrbanSoccer.unperformable(city,time,duration,date)
           opts = {
         headless: true
       }
@@ -88,16 +88,16 @@ class ScrapUrbanSoccer
     end
  
 
- private
-   
-   
-    def urban_duration(duration)
-     
-        
-        return duration
+    private
+    def self.unperformable(city,time,duration,date)
+        city == "Ville" || time == "Début" || duration == "Durée" || date == "" || ScrapUrbanSoccer.urban_array.exclude?(city)
     end
-end  
-end
+
+    def self.urban_array
+      return ["Puteaux", "Meudon", "Orsay ", "Asnieres-Gennevilliers ", "Porte d'aubervilliers", "Evry-Courcouronnes", "La Défense ", " Porte d'Ivry", "Guyancourt", "Marne La Vallée"]
+    end
+  
+   end
   
   
   #type de terrain : browser.element(:xpath => "//div[2]/span[2]").text

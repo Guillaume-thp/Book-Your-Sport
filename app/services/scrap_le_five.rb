@@ -8,6 +8,9 @@ class ScrapLeFive
   end
   
   def perform(city,time,duration,date)
+
+    return nil if ScrapLeFive.unperformable(city,time,duration,date)
+  
    
     
 
@@ -99,16 +102,28 @@ class ScrapLeFive
     end
 
     return date_array, time_array, duration_array, price_array
-   
+ 
+  end 
+
 
     #center_field.value = center_field.options_with(:text => @city)[0].value
 
+    private
+    def self.unperformable(city,time,duration,date)
+        city == "Ville" || time == "Début" || duration == "Durée" || date == "" || ScrapLeFive.lefive_array.exclude?(city)
+    end
 
-     
- 
-  end
+    def self.lefive_array
+      return ["Bezons", "Carrières-sous-poissy", "Bobigny", "Villette", "Créteil", "Paris 13", "Champigny"] 
+    end
+  
+   end
+  
+  
+  
+  
 
 
 
 
-end
+
