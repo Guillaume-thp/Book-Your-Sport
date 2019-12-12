@@ -11,4 +11,9 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get welcome" do
+    get static_pages_welcome_url
+    assert_response :success
+  end
+
 end
