@@ -84,7 +84,7 @@ class ScrapUrbanSoccer
        end
     
       
-      #return browser.div(class: "reservation-header").text #browser.div(class: "reservation-header").text
+      
     end
  
 

@@ -22,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% scrap = ScrapLeFive.new.perform(params[:city][:choice], params[:time][:choice], params[:duration][:choice],params[:date]) %>
+                   
                         <p id="notice">
                             <%= notice %>
                         </p>
@@ -36,7 +36,7 @@
                             </thead>
                             <tbody>
                                 <% i = 0 %>
-                                    <% scrap[0].length.times do%>
+                                    <% @lefive_scrap[0].length.times do%>
                                         </div>
                                         </div>
 
@@ -48,10 +48,10 @@
                                 <div class="card-body center">
                                     <h4 class="card-title center front-size ">
 
-                                        <%=scrap[0][i]%>
-                                            <%=scrap[1][i]%>
-                                                <%=scrap[2][i]%>
-                                                    <%=scrap[3][i]%>
+                                        <%=@lefive_scrap[0][i]%>
+                                            <%=@lefive_scrap[1][i]%>
+                                                <%=@lefive_scrap[2][i]%>
+                                                    <%=@lefive_scrap[3][i]%>
 
 
                                                         <button type="button" class="btn btn-warning right">Réserver</button>
