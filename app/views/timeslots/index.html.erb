@@ -56,7 +56,10 @@
                                                 <%= hour = scrap[1][i]%>
                                                     <%= duration = scrap[2][i]%>
                                                         <%= amount = scrap[3][i].delete(' ') %>
-                                                            <%= link_to "Réserver", new_charge_path(date:date, hour:hour, duration:duration, amount:amount), class: "btn btn-warning" %>
+                                                            <%= if current_user
+                                                        link_to "Réserver", new_charge_path(date:date, hour:hour, duration:duration, amount:amount), class: "btn btn-warning"
+                                                        else " "
+                                                        end %>
 
                                         </h4>
                                     </div>
