@@ -3143,6 +3143,24 @@ fieldset:disabled a.btn {
     border-color: #dd9e3f;
 }
 
+.btn-warning-timeslots {
+    color: #fff;
+    /* BOUTON timeslots-réserver */
+    background-color: #dd9e3f;
+    border-color: #dd9e3f;
+    position: relative;
+    left: 25%;
+}
+
+.btn-warning-timeslots-sign {
+    color: #fff;
+    /* BOUTON timeslots-sign in */
+    background-color: #dd9e3f;
+    border-color: #020100;
+    position: relative;
+    left: 25%;
+}
+
 .btn-warning:hover {
     color: #fff;
     background-color: #ed9d2b;
