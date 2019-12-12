@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
+    <meta charset="utf-8">
+    <title>Book Your Sport</title>
     <link rel="icon" type="image/png" href="assets/logo_BYS.png" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +12,7 @@
 </head>
 <header>
     <!-- START NAVBAR -->
-    <% if current_page?('/') %>
+    <% if current_page?('/') || current_page?('/users/sign_up') || current_page?('/users/sign_in') %>
     <nav class="navbar navbar-expand topnav bg-primary">
         <% else %>
         <nav class="navbar navbar-expand topnav bg-secondary">
