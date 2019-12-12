@@ -11,57 +11,57 @@
             <%= notice %>
         </p>
         <%= notice %>
-            </p>
-            <br><br>
-            <h1 class="Montserrat">Créneaux disponibles</h1>
-            <br>
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="3"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% scrap = ScrapLeFive.new.perform(params[:city][:choice], params[:time][:choice], params[:duration][:choice],params[:date]) %>
-                        <p id="notice">
-                            <%= notice %>
-                        </p>
-                        <br><br>
-                        <br>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th colspan="3"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% i = 0 %>
-                                    <% scrap[0].length.times do%>
-                                        </div>
-                                        </div>
-
-                                        <br>
-                            </tbody>
-                        </table>
-                        <div class="center">
-                            <div class=" timeslot-style card border-warning mb-3 center">
-                                <div class="card-body center">
-                                    <h4 class="card-title center front-size ">
-
-                                        <%=scrap[0][i]%>
-                                            <%=scrap[1][i]%>
-                                                <%=scrap[2][i]%>
-                                                    <%=scrap[3][i]%>
-
-
-                                                        <button type="button" class="btn btn-warning right">Réserver</button>
-
-                                    </h4>
-                                </div>
-                            </div>
+        </p>
+        <br><br>
+        <h1 class="Montserrat">Créneaux disponibles</h1>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% scrap = ScrapLeFive.new.perform(params[:city][:choice], params[:time][:choice], params[:duration][:choice],params[:date]) %>
+                <p id="notice">
+                    <%= notice %>
+                </p>
+                <br><br>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="3"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% i = 0 %>
+                        <% scrap[0].length.times do%>
                         </div>
-                        <% i = i+1 %>
-                            <% end %>
+                        </div>
+
+                        <br>
+                    </tbody>
+                </table>
+                <div class="center">
+                    <div class=" timeslot-style card border-warning mb-3 center">
+                        <div class="card-body center">
+                            <h4 class="card-title center front-size ">
+
+                                <%=scrap[0][i]%>
+                                <%=scrap[1][i]%>
+                                <%=scrap[2][i]%>
+                                <%=scrap[3][i]%>
+
+
+                                <button type="button" class="btn btn-warning right">Réserver</button>
+
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <% i = i+1 %>
+                <% end %>
     </body>
 
     </html>

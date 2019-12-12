@@ -16,6 +16,5 @@ module BookYourSport
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.assets.paths << "#{Rails.root}/app/assets/videos" # For videos in the welcome pages
-    config.assets.paths << "#{Rails.root}/app/assets/images" # For images in Heroku
   end
 end
