@@ -1,6 +1,6 @@
 <head>
-    <title>Timeslot</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="asset/stylesheet">
+	<title>Timeslot</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="asset/stylesheet">
 </head>
 <% if  @lefive_scrap == nil %>
 </body>
@@ -10,142 +10,142 @@
 </p>
 <tbody>
 
-    <body>
-        <p id="notice">
-            <%= notice %>
-        </p>
-        <%= notice %>
-        </p>
-        <h4>
-            <% unless user_signed_in? %>
-            <div class="alert alert-warning center" role="alert">
-                Veuillez vous connecter ou vous inscrire pour réserver votre créneau!
-            </div>
-            <% end %>
-        </h4>
-        <h1 class=" Montserrat ">Voici les créneaux disponibles pour la ville de
-            <%=params[:city][:choice]%> à
-            <%=params[:time][:choice]%>h, le
-            <%=params[:date]%>
-        </h1>
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="3 "></th>
-                </tr>
-            </thead>
-            <tbody>
-                <p id="notice ">
-                    <%= notice %>
-                </p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th colspan="3 "></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% i = 0 %>
-                        <% @lefive_scrap[0].length.times do%>
-                        </div>
-                        </div>
-                    </tbody>
-                </table>
-                <div class="center ">
-                    <div class=" timeslot-style card border-warning mb-3 center ">
-                        <div class="card-body center ">
-                            <h4 class="card-title center front-size ">
-                                <%= date = @lefive_scrap[0][i]%>
-                                <%= hour = @lefive_scrap[1][i]%>
-                                <%= duration = @lefive_scrap[2][i]%>
-                                <%= amount = @lefive_scrap[3][i].delete(' ') %>
-                                <%= if current_user
+	<body>
+		<p id="notice">
+			<%= notice %>
+		</p>
+		<%= notice %>
+		</p>
+		<h4>
+			<% unless user_signed_in? %>
+			<div class="alert alert-warning center" role="alert">
+				Veuillez vous connecter ou vous inscrire pour réserver votre créneau!
+			</div>
+			<% end %>
+		</h4>
+		<h1 class=" Montserrat ">Voici les créneaux disponibles pour la ville de
+			<%=params[:city][:choice]%> à
+			<%=params[:time][:choice]%>h, le
+			<%=params[:date]%>
+		</h1>
+		<table>
+			<thead>
+				<tr>
+					<th colspan="3 "></th>
+				</tr>
+			</thead>
+			<tbody>
+				<p id="notice ">
+					<%= notice %>
+				</p>
+				<table>
+					<thead>
+						<tr>
+							<th colspan="3 "></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% i = 0 %>
+						<% @lefive_scrap[0].length.times do%>
+						</div>
+						</div>
+					</tbody>
+				</table>
+				<div class="center ">
+					<div class=" timeslot-style card border-warning mb-3 center ">
+						<div class="card-body center ">
+							<h4 class="card-title center front-size ">
+								<%= date = @lefive_scrap[0][i]%>
+								<%= hour = @lefive_scrap[1][i]%>
+								<%= duration = @lefive_scrap[2][i]%>
+								<%= amount = @lefive_scrap[3][i].delete(' ') %>
+								<%= if current_user
     link_to "Réserver ", new_charge_path(date:date, hour:hour, duration:duration, amount:amount), class: "btn btn-warning-timeslots "
     else link_to "Connexion ", new_user_session_path, class: "btn btn-warning-timeslots-sign "
     end %>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <% i = i+1 %>
-                <% end %>
-    </body>
-    <% end %>
+							</h4>
+						</div>
+					</div>
+				</div>
+				</div>
+				<% i = i+1 %>
+				<% end %>
+	</body>
+	<% end %>
 
 
-    <% if  @urban_scrap == nil %>
-    <div class="alert alert-warning center" role="alert">
-        <p> Votre recherche est incomplète, remplissez tous les champs s'il vous plaît.</p>
-    </div>
-    </body>
-    <% elsif  @urban_scrap == "Désolé, il n'y a aucun créneau disponible correspondant à vos critères sur Urban Soccer" %>
-    <div class="alert alert-warning center" role="alert">
-        <p>
-            <%= @urban_scrap %>
-        </p>
-    </div>
-    <% elsif  @urban_scrap == true %>
-    </body>
-    <% elsif  @urban_scrap == false %>
-    <div class="alert alert-warning center" role="alert">
-        <p> L'affichage des créneaux n'est pas possible au-delà de 45 jours pour cette ville </p>
-    </div>
-    <% else %>
-    </p>
+	<% if  @urban_scrap == nil %>
+	<div class="alert alert-warning center" role="alert">
+		<p> Votre recherche est incomplète, remplissez tous les champs s'il vous plaît.</p>
+	</div>
+	</body>
+	<% elsif  @urban_scrap == "Désolé, il n'y a aucun créneau disponible correspondant à vos critères sur Urban Soccer" %>
+	<div class="alert alert-warning center" role="alert">
+		<p>
+			<%= @urban_scrap %>
+		</p>
+	</div>
+	<% elsif  @urban_scrap == true %>
+	</body>
+	<% elsif  @urban_scrap == false %>
+	<div class="alert alert-warning center" role="alert">
+		<p> L'affichage des créneaux n'est pas possible au-delà de 45 jours pour cette ville </p>
+	</div>
+	<% else %>
+	</p>
 <tbody>
 
-    <body>
-        <p id="notice">
-            <%= notice %>
-        </p>
-        <%= notice %>
-        </p>
-        <br><br>
-        <h1 class="Montserrat">Créneau Urban Soccer disponible pour la ville de
-            <%=params[:city][:choice]%> à
-            <%=params[:time][:choice]%>, durée de
-            <%=params[:duration][:choice]%> à la date du
-            <%=params[:date]%>
-        </h1>
-        <br>
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="3 "></th>
-                </tr>
-            </thead>
-            <tbody>
-                <p id="notice ">
-                    <%= notice %>
-                </p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th colspan="3 "></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        </div>
-                        </div>
-                    </tbody>
-                </table>
-                <div class="center ">
-                    <div class=" timeslot-style card border-warning mb-3 center ">
-                        <div class="card-body center ">
-                            <h4 class="card-title center front-size ">
-                                <%= date = @urban_scrap[0]%>
-                                <%= hour = @urban_scrap[1]%>
-                                <%= duration = @urban_scrap[2]%>
-                                <%= amount = @urban_scrap[3].delete(' ') %>
-                                <%= if current_user
+	<body>
+		<p id="notice">
+			<%= notice %>
+		</p>
+		<%= notice %>
+		</p>
+		<br><br>
+		<h1 class="Montserrat">Créneau Urban Soccer disponible pour la ville de
+			<%=params[:city][:choice]%> à
+			<%=params[:time][:choice]%>, durée de
+			<%=params[:duration][:choice]%> à la date du
+			<%=params[:date]%>
+		</h1>
+		<br>
+		<table>
+			<thead>
+				<tr>
+					<th colspan="3 "></th>
+				</tr>
+			</thead>
+			<tbody>
+				<p id="notice ">
+					<%= notice %>
+				</p>
+				<table>
+					<thead>
+						<tr>
+							<th colspan="3 "></th>
+						</tr>
+					</thead>
+					<tbody>
+						</div>
+						</div>
+					</tbody>
+				</table>
+				<div class="center ">
+					<div class=" timeslot-style card border-warning mb-3 center ">
+						<div class="card-body center ">
+							<h4 class="card-title center front-size ">
+								<%= date = @urban_scrap[0]%>
+								<%= hour = @urban_scrap[1]%>
+								<%= duration = @urban_scrap[2]%>
+								<%= amount = @urban_scrap[3].delete(' ') %>
+								<%= if current_user
 link_to "Réserver ", new_charge_path(date:date, hour:hour, duration:duration, amount:amount), class: "btn btn-warning-timeslots "
 else link_to "Connexion ", root_path, class: "btn btn-warning-timeslots-sign "
 end %>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                </div>
-    </body>
-    <% end %>
+							</h4>
+						</div>
+					</div>
+				</div>
+				</div>
+	</body>
+	<% end %>

@@ -1,28 +1,30 @@
 <div class="center element_position">
-    <%= form_tag charges_path(:date => params[:date],:hour => params[:hour], :duration => params[:duration], :price => params[:price]) do %>
-    <article>
-        <% if flash[:error].present? %>
-        <div id="error_explanation">
-            <p>
-                <%= flash[:error] %>
-            </p>
-        </div>
-        <% end %>
-        <br><br>
-        <div class="alert center result_width" role="alert">
-            <h1 class="Montserrat">
-            <span class=" font_x ">Souhaitez-vous confirmez votre réservation du <%= params[:date]%> </span>
-            <span class=" font_x ">à <%= params[:hour]%></span>
-            <span class=" font_x ">h, durant <%= params[:duration]%></span>
-            <span class=" font_x ">h pour le prix de <%= params[:amount]%>?</span>
-            </h1>
-        </div>
-        <br><br>
-    </label>
-</article>
-<div class="center">
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Réservez votre créneau" data-currency="EUR" data-amount="<%= params[:amount].to_f*100 %>" data-locale="auto">
-    </script>
-    <% end %>
-</div>
+	<%= form_tag charges_path(:date => params[:date],:hour => params[:hour], :duration => params[:duration], :price => params[:price]) do %>
+	<article>
+		<% if flash[:error].present? %>
+		<div id="error_explanation">
+			<p>
+				<%= flash[:error] %>
+			</p>
+		</div>
+		<% end %>
+		<br><br>
+		<div class="alert center result_width" role="alert">
+			<h1 class="Montserrat">
+				<span class=" font_x ">Souhaitez-vous confirmer votre réservation du <%= params[:date]%> </span>
+				<span class=" font_x ">à <%= params[:hour]%></span>
+				<span class=" font_x ">h, durant <%= params[:duration]%></span>
+				<span class=" font_x ">h pour le prix de <%= params[:amount]%>?</span>
+			</h1>
+		</div>
+		<br><br>
+		</label>
+	</article>
+	<div class="center">
+		<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Réservez votre créneau"
+			data-currency="EUR" data-amount="<%= params[:amount].to_f*100 %>" data-locale="auto">
+			</script>
+		<% end %>
+	</div>
 </div>
