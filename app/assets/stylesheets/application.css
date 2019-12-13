@@ -11468,6 +11468,16 @@ footer {
     background: #999999;
 }
 
+.footer-test {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #999999;
+    color: black;
+    text-align: center;
+}
+
 input[type="date"],
 input[type="time"] {
     padding: 0.4em;
