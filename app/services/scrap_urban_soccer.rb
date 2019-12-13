@@ -94,7 +94,7 @@ class ScrapUrbanSoccer
     end
 
     def self.urban_array
-      return ["Puteaux", "Meudon", "Orsay", "Asnieres-Gennevilliers ", "Porte d'aubervilliers", "Evry-Courcouronnes", "La Défense", " Porte d'Ivry", "Guyancourt", "Marne La Vallée"]
+      return ["Puteaux", "Meudon", "Orsay", "Asnières", "Porte d'aubervilliers", "Evry-Courcouronnes", "La Défense", " Porte d'Ivry", "Guyancourt", "Marne La Vallée"]
     end
   
    end
