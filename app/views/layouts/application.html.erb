@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Book Your Sport</title>
-    <link rel="icon" type="image/png" href="assets/logo_BYS.png" />
+    <link rel="icon" type="image/png" href="https://bookyoursport.s3.eu-west-3.amazonaws.com/ico/logo_BYS.png" />
     <%= csrf_meta_tags %>
         <%= csp_meta_tag %>
             <%= stylesheet_link_tag'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,7 +17,7 @@
             <% else %>
                 <nav class="navbar navbar-expand topnav bg-secondary">
                     <% end %>
-                        <%= image_tag("logo_BYS.png", :alt => "BYS logo", :class => "img-s") %>
+                        <%= image_tag("https://bookyoursport.s3.eu-west-3.amazonaws.com/ico/logo_BYS.png", :alt => "BYS logo", :class => "img-s") %>
                             <%= link_to "Accueil", root_path, class: "btn btn-inverse button" %>
                                 <%= link_to "L'équipe", static_pages_team_path, class: "btn btn-inverse" %>
                                     <ul class="nav ml-auto">

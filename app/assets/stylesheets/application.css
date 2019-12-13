@@ -7513,7 +7513,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-    background: url("trans-tile-feature-nav.png") !important;
+    background: url("https://bookyoursport.s3.eu-west-3.amazonaws.com/ico/trans-tile-feature-nav.png") !important;
     position: fixed;
     width: 100%;
 }
