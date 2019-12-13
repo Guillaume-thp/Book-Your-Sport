@@ -11,7 +11,7 @@ class ScrapUrbanSoccer
         opts.merge!( options: {binary: chrome_bin})
       end 
   
-      browser = Watir::Browser.new :chrome, opts
+      browser = Watir::Browser.new :chrome#, opts
       browser.goto 'https://my.urbansoccer.fr/user?goto=reserver'
       email_field = browser.text_field(type: 'email')
       password_field = browser.text_field(type: 'password')
@@ -94,7 +94,7 @@ class ScrapUrbanSoccer
     end
 
     def self.urban_array
-      return ["Puteaux", "Meudon", "Orsay ", "Asnieres-Gennevilliers ", "Porte d'aubervilliers", "Evry-Courcouronnes", "La Défense", " Porte d'Ivry", "Guyancourt", "Marne La Vallée"]
+      return ["Puteaux", "Meudon", "Orsay", "Asnieres-Gennevilliers ", "Porte d'aubervilliers", "Evry-Courcouronnes", "La Défense", " Porte d'Ivry", "Guyancourt", "Marne La Vallée"]
     end
   
    end
