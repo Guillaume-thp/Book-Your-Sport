@@ -83,3 +83,5 @@ gem "dotenv-rails", "~> 2.7"
 
 # For tests
 gem "pry", "~> 0.12.2"
+
+gem "stripe", "~> 5.11"

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :charges
   after_create :welcome_send
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

@@ -5,7 +5,9 @@ class TimeslotsController < ApplicationController
   # GET /timeslots.json
   def index
     @timeslots = Timeslot.all
-  end
+    @lefive_scrap = ScrapLeFive.new.perform(params[:city][:choice], params[:time][:choice], params[:duration][:choice],params[:date])
+    @urban_scrap = ScrapUrbanSoccer.new.perform(params[:city][:choice], params[:time][:choice], params[:duration][:choice],params[:date])
+ end
 
   # GET /timeslots/1
   # GET /timeslots/1.json

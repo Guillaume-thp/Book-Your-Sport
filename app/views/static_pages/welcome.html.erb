@@ -1,5 +1,7 @@
 <!-- JUMBOTRON START -->
 
+
+
 <div class="jumbotron">
 
     <!-- VIDEO -->
@@ -22,14 +24,17 @@
 
                 <!-- SPORT -->
 
-                <select id="sport_element" onchange="getSelectValue();" class="custom-select" style="width:200px; margin:10px;">
-                    <option selected="">Sport</option>
-                    <option value="Football">Football</option>
+                <select id="sport_element" name ="Sport" onchange="getSelectValue();" class="custom-select"
+                    style="width:200px; margin:10px;">
+                    
+                    <option selected value="Football">Football</option>
                 </select>
 
                 <!-- CITIES -->
+                
 
-                <select id="ville_element" name="city[choice]" onchange="getSelectValue();" class="custom-select" style="width:300px;">
+                <select id="ville_element" name="city[choice]" onchange="getSelectValue();" class="custom-select"
+                    style="width:300px;">
                     <option selected="">Ville</option>
                     <option value="Asnières">Asnieres-Gennevilliers</option>
                     <option value="Villette">Aubervilliers</option>
@@ -41,7 +46,7 @@
                     <option value="Guyancourt">Guyancourt</option>
                     <option value="Evry-Courcouronnes">Evry-Courcourrones</option>
                     <option value="La Défense">La Défense</option>
-                    <option value="Marne La Vallée">Marne La Vallée</option>
+                    <option value="Marne la Vallée">Marne La Vallée</option>
                     <option value="Meudon">Meudon</option>
                     <option value="Orsay">Orsay</option>
                     <option value="Paris 13">Paris 13</option>
@@ -52,12 +57,14 @@
 
                 <!-- DATE BOOKING -->
 
-                <input id="date_element" type="date" name="date" class="custom-select" style="width:200px; margin:10px;" onchange="getSelectValue();">
+                <input id="date_element" type="date" name="date" class="custom-select" style="width:200px; margin:10px;"
+                    onchange="getSelectValue();">
 
                 <!-- TIME BOOKING -->
 
-                <select name="time[choice]" id="time_element" onchange="getSelectValue();" class="custom-select" style="width:110px;">
-                    <option selected="a">Début:</option>
+                <select name="time[choice]" id="time_element" onchange="getSelectValue();" class="custom-select"
+                    style="width:110px;">
+                    <option selected="a">Début</option>
                     <option value="10:00">10:00</option>
                     <option value="10:30">10:30</option>
                     <option value="11:00">11:00</option>
@@ -86,8 +93,9 @@
 
                 <!-- BOOKING DURATION -->
 
-                <select name="duration[choice]" id="duration_element" onchange="getSelectValue();" class="custom-select" style="width:110px;">
-                    <option selected="">Durée:</option>
+                <select name="duration[choice]" id="duration_element" onchange="getSelectValue();" class="custom-select"
+                    style="width:110px;">
+                    <option selected="">Durée</option>
                     <option value="01:00">1h00</option>
                     <option value="01:30">1h30</option>
                     <option value="02:00">2h00</option>
