@@ -53,7 +53,7 @@
                                     </thead>
                                     <tbody>
                                         <% i = 0 %>
-                                            <% @lefive_scrap[0].length.times do%>%>
+                                            <% @lefive_scrap[0].length.times do%>
                                                 </div>
                                                 </div>
                                     </tbody>
@@ -91,6 +91,12 @@
                 <% end %>
                     <br>
                     <br>
+
+                    <% unless user_signed_in? %>
+                                <div class="alert alert-warning center" role="alert">
+                                    Veuillez vous connecter ou vous inscrire pour réserver votre créneau!
+                                </div>
+                                <% end %>
 
                     <% if  @urban_scrap == nil %>
                         <div class="alert alert-warning center" role="alert">
@@ -168,7 +174,6 @@
                                                                         <h4 class="card-title center front-size ">
                                                                             <%= date = @urban_scrap[0]%>
                                                                                 <%= hour = @urban_scrap[1]%>
-                                                                                    <%= duration = @urban_scrap[2]%>
                                                                                         <%= duration = @urban_scrap[2]%>
                                                                                             <%= amount = @urban_scrap[3].delete(' ') %>
                                                                                                 <%= if current_user
