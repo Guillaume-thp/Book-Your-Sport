@@ -13,42 +13,22 @@
                         <div id="login-box">
                             <div class="left">
                                 <h1>Sign up</h1>
+                                <% f.label :email %><br />
+                                    <%= f.email_field :email, autofocus: true, autocomplete: "email", type: "text", placeholder: "Email" %>
+                                        <% f.label :password %>
+                                            <%= f.password_field :password, autocomplete: "new-password", type: "password", placeholder: "Password" %>
+                                                <% if @minimum_password_length %>
+                                                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                                                    <% end %><br />
+                                                        <% f.label :password_confirmation %><br />
+                                                            <%= f.password_field :password_confirmation, autocomplete: "new-password", type: "password", placeholder: "Retype password" %>
+                                                                <%= f.submit "Sign up" %>
+                                                                    <%= render "devise/shared/links" %>
 
-                                <div class="field">
-                                    <% f.label :email %><br />
-                                        <%= f.email_field :email, autofocus: true, autocomplete: "email", type: "text", placeholder: "Email" %>
-                                </div>
-
-                                <div class="field">
-                                    <% f.label :password %>
-                                        <%= f.password_field :password, autocomplete: "new-password", type: "password", placeholder: "Password" %>
-                                            <% if @minimum_password_length %>
-                                                <em>(<%= @minimum_password_length %> characters minimum)</em>
-                                                <% end %><br />
-                                </div>
-
-                                <div class="field">
-                                    <% f.label :password_confirmation %><br />
-                                        <%= f.password_field :password_confirmation, autocomplete: "new-password", type: "password", placeholder: "Retype password" %>
-                                </div>
-
-                                <div class="actions">
-                                    <%= f.submit "Sign up" %>
-                                        <%= render "devise/shared/links" %>
-                                </div>
-                                <% end %>
+                                                                        <% end %>
                             </div>
-
-                            <div class="right">
-                                <span class="loginwith">Sign in with<br />social network</span>
-
-
-                                <button class="social-signin facebook">Log in with facebook</button>
-                                <button class="social-signin twitter">Log in with Twitter</button>
-                                <button class="social-signin google">Log in with Google+</button>
-                            </div>
-                            <div class="or">OR</div>
                         </div>
+
             </div>
         </div>
 </div>
