@@ -1,20 +1,21 @@
 Welcome to our README.ME.
 
-This README will help you understand our "Book Your Sport Application", which is the final project of our The Hacking Project 11 weeks intensive training.
+This README will help you understand our "Book Your Sport Application", which is the final project of The Hacking Project 10th session.
 
-Book your Sport is a web application that allows users to have in a glance all the available timeslots of the sport selected, in Paris and the immediate suburbs.
+__Book your Sport__ is a web application that allows users to have all the available timeslots of the sport selected in a glance in Paris and the immediate suburbs.
 
 This first version only allows users to choose "Football", but the main objective in the future will be to develop it for other team sports, like tennis, padel and badminton.
 
-Some conditions need to be satisfied before trying to run the app:
-
-1. You need to have or create an account in https://my.urbansoccer.fr/user and https://www.lefive.fr/identifiez-vous/ 
-2. 
+You need to ask the owner the __.env__ file to have access to the different tools connected to the app (Stripe, SendGrid, Urbansoccer and LeFive).
 
 You can have a look by cloning it in your local environment, then by running the following commands in your terminal:
 
-1. bundle install
-2. rails db:reset
-3. rails s
+1. git clone git@github.com:Guillaume-thp/Book-Your-Sport.git
+2. cd Book-Your-Sport
+3. bundle install
+4. rails db:reset
+5. rails s
 
-Then go on your navigator and run http://localhost:3000/.
+Then run http://localhost:3000/ in your browser.
+
+

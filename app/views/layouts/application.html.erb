@@ -6,44 +6,45 @@
     <title>Book Your Sport</title>
     <link rel="icon" type="image/png" href="assets/logo_BYS.png" />
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= csp_meta_tag %>
+            <%= stylesheet_link_tag'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+                <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <header>
     <!-- START NAVBAR -->
     <% if current_page?('/') || current_page?('/users/sign_up') || current_page?('/users/sign_in') %>
-    <nav class="navbar navbar-expand topnav bg-primary">
-        <% else %>
-        <nav class="navbar navbar-expand topnav bg-secondary">
-            <% end %>
-            <%= image_tag("logo_BYS.png", :alt => "BYS logo", :class => "img-s") %>
-            <%= link_to "Accueil", root_path, class: "btn btn-inverse button" %>
-            <%= link_to "L'équipe", static_pages_team_path, class: "btn btn-inverse" %>
-            <%= link_to "A propos", static_pages_about_path, class: "btn btn-inverse"%>
-            <ul class="nav ml-auto">
-                <% if user_signed_in? %>
-                <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "btn btn-inverse nav-item" %>
-                <% else %>
-                <%= link_to "Connexion", new_user_session_path, class: "btn btn-inverse nav-item" %>
-                <%= link_to "Inscription", new_user_registration_path, class: "btn btn-inverse nav-item" %>
-                <% end %>
-            </ul>
-        </nav>
-        <!-- END NAVBAR -->
+        <nav class="navbar navbar-expand topnav bg-primary">
+            <% else %>
+                <nav class="navbar navbar-expand topnav bg-secondary">
+                    <% end %>
+                        <%= image_tag("logo_BYS.png", :alt => "BYS logo", :class => "img-s") %>
+                            <%= link_to "Accueil", root_path, class: "btn btn-inverse button" %>
+                                <%= link_to "L'équipe", static_pages_team_path, class: "btn btn-inverse" %>
+                                    <ul class="nav ml-auto">
+                                        <% if user_signed_in? %>
+                                            <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "btn btn-inverse nav-item" %>
+                                                <% else %>
+                                                    <%= link_to "Connexion", new_user_session_path, class: "btn btn-inverse nav-item" %>
+                                                        <%= link_to "Inscription", new_user_registration_path, class: "btn btn-inverse nav-item" %>
+                                                            <% end %>
+                                    </ul>
+                </nav>
+                <!-- END NAVBAR -->
 
 </header>
 
 <body>
     <%= yield %>
-    <!-- START FOOTER -->
-    <footer>
-        <div>
-            Contact information: <a href="mailto: bookyoursport@yahoo.com"> bookyoursport@yahoo.com</a></br>
-            Made with love ♥ : Guillaume VIDALE, Hilal BUSHERA, Emilio LECERF, Michael KRASNOVSKY, Estelle BALLIF
+        <!-- START FOOTER -->
+
+        <div class="footer-test">
+
+            Contact information: <a href="mailto: bookyoursport@yahoo.com"> bookyoursport@yahoo.com</a>
+            <div class="footer-italic">
+                Made with love ♥ by Guillaume VIDALE, Hilal BUSHERA, Emilio LECERF, Michael KRASNOVSKY, Estelle BALLIF
+            </div>
         </div>
-    </footer>
-    <!-- END FOOTER -->
+        <!-- END FOOTER -->
 </body>
 
 </html>
