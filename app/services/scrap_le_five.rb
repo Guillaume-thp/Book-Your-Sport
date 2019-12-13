@@ -26,21 +26,16 @@ class ScrapLeFive
     password_field.value = ENV['LEFIVE_PASSWORD'] # Set the value in the password field
   
     
-    page = agent.submit(page.forms.last) # Submit the result for connect in var
+    page = agent.submit(page.forms.last) 
 
-    # Test for detect link with Réserver
-    # agent.page.links.find { |link| link.text == 'Réserver' }
-    # => #<Mechanize::Page::Link "Réserver" "/reservations/">
+    
 
     book_link = agent.page.links.find { |link| link.text == 'Réserver' } # Link for book sport
     page = book_link.click # Click on the Book Link
 
-    # test for show if i change url
-    # book_link.uri
-    #  => #<URI::HTTPS https://www.soccerpark.fr/index/nocentres/index.html?url_redirect=https://www.soccerpark.fr/reservations/>
     
     center_field = page.form.field_with(name: 'centres_id')
-    # center_field.value = "39"
+   
     center_field.value = center_field.option_with(:text =>"LE FIVE #{city}")
 
     page = agent.submit(page.form)
