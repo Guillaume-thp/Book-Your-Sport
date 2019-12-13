@@ -61,7 +61,7 @@
                                 <%= amount = @lefive_scrap[3][i].delete(' ') %>
                                 <%= if current_user
     link_to "Réserver ", new_charge_path(date:date, hour:hour, duration:duration, amount:amount), class: "btn btn-warning-timeslots "
-    else link_to "Connexion ", root_path, class: "btn btn-warning-timeslots-sign "
+    else link_to "Connexion ", new_user_session_path, class: "btn btn-warning-timeslots-sign "
     end %>
                             </h4>
                         </div>
