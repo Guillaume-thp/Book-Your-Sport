@@ -11473,9 +11473,13 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background: #999999;
+    background: #ffffff;
     color: black;
     text-align: center;
+}
+
+.footer-italic {
+    font-style: italic;
 }
 
 input[type="date"],
