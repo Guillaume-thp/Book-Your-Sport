@@ -3,6 +3,10 @@ class ScrapUrbanSoccer
  
     def perform(city,time,duration,date)
       return nil if ScrapUrbanSoccer.unperformable(city,time,duration,date)
+      return true if ScrapUrbanSoccer.city_in_array?(city)
+      return false if ScrapUrbanSoccer.date_before_45_days?(date)
+
+
           opts = {
         headless: true
       }
@@ -11,7 +15,7 @@ class ScrapUrbanSoccer
         opts.merge!( options: {binary: chrome_bin})
       end 
   
-      browser = Watir::Browser.new :chrome#, opts
+      browser = Watir::Browser.new :chrome, opts
       browser.goto 'https://my.urbansoccer.fr/user?goto=reserver'
       email_field = browser.text_field(type: 'email')
       password_field = browser.text_field(type: 'password')
@@ -90,19 +94,23 @@ class ScrapUrbanSoccer
 
     private
     def self.unperformable(city,time,duration,date)
-        city == "Ville" || time == "Début" || duration == "Durée" || date == "" || ScrapUrbanSoccer.urban_array.exclude?(city)
+        city == "Ville" || time == "Début" || duration == "Durée" || date == "" 
+    end
+
+    def self.city_in_array?(city)
+       ScrapUrbanSoccer.urban_array.exclude?(city)
     end
 
     def self.urban_array
       return ["Puteaux", "Meudon", "Orsay", "Asnières", "Porte d'aubervilliers", "Evry-Courcouronnes", "La Défense", "Porte d'Ivry", "Guyancourt", "Marne la Vallée"]
     end
+
+    def self.date_before_45_days?(date)
+      (date.to_date - Time.now.to_date).round > 44 || (date.to_date - Time.now.to_date).round < 0
+    end
   
    end
   
   
-  #type de terrain : browser.element(:xpath => "//div[2]/span[2]").text
-  # date : browser.element(:xpath => "//div[3]/span[2]").text
-  # durée : browser.element(:xpath => "//div[2]/div[2]/span[2]").text
-  # browser.element(:xpath =>    "//div[2]/div[3]/span[2]).text
-  # prix : browser.element(:xpath => "//div[2]/div[3]/span[2]").text
+  
   

@@ -10,6 +10,7 @@ class ScrapLeFive
   def perform(city,time,duration,date)
 
     return nil if ScrapLeFive.unperformable(city,time,duration,date)
+    return true if ScrapLeFive.city_in_array?(city)
   
    
     
@@ -110,8 +111,12 @@ class ScrapLeFive
 
     private
     def self.unperformable(city,time,duration,date)
-        city == "Ville" || time == "Début" || duration == "Durée" || date == "" || ScrapLeFive.lefive_array.exclude?(city)
-    end
+        city == "Ville" || time == "Début" || duration == "Durée" || date == "" 
+    end 
+
+    def self.city_in_array?(city)
+      ScrapLeFive.lefive_array.exclude?(city)
+   end
 
     def self.lefive_array
       return ["Bezons", "Carrières-sous-poissy", "Bobigny", "Villette", "Créteil", "Paris 13", "Champigny"] 

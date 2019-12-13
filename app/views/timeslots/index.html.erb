@@ -6,8 +6,11 @@
     </head>
 
     <% if  @lefive_scrap == nil %>
+      
+    </body>
    
-  </body>
+    <% elsif  @lefive_scrap == true %>
+     </body>
    <% else %>
     </p>
     <tbody>
@@ -94,11 +97,26 @@
     <br>
 
         <% if  @urban_scrap == nil %>
+        <div class="alert alert-warning center" role="alert">
+         
+         
+        <p> Votre recherche est incomplète, remplissez tous les champs s'il vous plaît.</p>
+    </div>
         
        </body>
     <% elsif  @urban_scrap == "Désolé, il n'y a aucun créneau disponible correspondant à vos critères sur Urban Soccer" %>
+    <div class="alert alert-warning center" role="alert">
     <p> <%= @urban_scrap %> </p>
-    </body>
+    </div>
+    <% elsif  @urban_scrap == true %>
+
+    
+    </body> 
+
+<% elsif  @urban_scrap == false %>
+  <div class="alert alert-warning center" role="alert">
+    <p> L'affiche des créneaux n'est pas possible au-delà de 45 jours pour cette ville </p>
+  </div>
         <% else %>
          </p>
          <tbody>
