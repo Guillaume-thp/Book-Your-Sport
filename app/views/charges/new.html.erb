@@ -9,18 +9,21 @@
                     </p>
                 </div>
                 <% end %>
-                    <label class="amount">
-
-
-            <span>Confirmer votre réservation du <%= params[:date]%> </span>
-            <span>à <%= params[:hour]%></span>
-            <span>h, durant <%= params[:duration]%></span>
-            <span>h pour le prix de <%= params[:amount]%></span>
-
-        </label>
+                    <br><br>
+                    <h1 class="Montserrat">
+                        <span>Souhaitez-vous confirmez votre réservation du <%= params[:date]%> </span>
+                        <span>à <%= params[:hour]%></span>
+                        <span>h, durant <%= params[:duration]%></span>
+                        <span>h pour le prix de <%= params[:amount]%>?</span>
+                    </h1>
+                    <br><br>
+                    </label>
         </article>
+        <div class="center">
 
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Réservez votre créneau" data-currency="EUR" data-amount="<%= params[:amount].to_f*100 %>" data-locale="auto">
-        </script>
-        <% end %>
+
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Réservez votre créneau" data-currency="EUR" data-amount="<%= params[:amount].to_f*100 %>" data-locale="auto">
+            </script>
+            <% end %>
+        </div>
 </div>
