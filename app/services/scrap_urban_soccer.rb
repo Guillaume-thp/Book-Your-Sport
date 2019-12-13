@@ -74,7 +74,7 @@ class ScrapUrbanSoccer
   
       
       no_timeslot_message = "Désolé, il n'y a aucun créneau disponible correspondant à vos critères sur Urban Soccer"
-      sleep 1
+      sleep 2
     
         if browser.div(class:"liste-attente").exist? == true
           return no_timeslot_message
