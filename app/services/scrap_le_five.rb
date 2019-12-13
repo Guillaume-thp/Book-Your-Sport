@@ -114,7 +114,7 @@ class ScrapLeFive
    end
 
     def self.lefive_array
-      return ["Bezons", "Carrières-sous-poissy", "Bobigny", "Villette", "Créteil", "Paris 13", "Champigny"] 
+      return ["Bezons", "Carrières-sous-Poissy", "Bobigny", "Villette", "Créteil", "Paris 13", "Champigny"] 
     end
   
    end
