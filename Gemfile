@@ -87,3 +87,5 @@ gem "pry", "~> 0.12.2"
 gem "stripe", "~> 5.11"
 
 gem "tunemygc", "~> 1.0"
+
+gem "puma_worker_killer", "~> 0.1.1"
