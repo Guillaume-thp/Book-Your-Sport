@@ -63,6 +63,7 @@ class ScrapUrbanSoccer
     sleep 2
 
     if browser.div(class: 'liste-attente').exist? == true
+      browser.quit
       no_timeslot_message
     elsif browser.div(class: 'liste-attente').exist? == false
       timeslot_date = browser.element(xpath: '//div[3]/span[2]').text
@@ -70,8 +71,11 @@ class ScrapUrbanSoccer
       timeslot_duration = browser.element(xpath: '//div[2]/div[2]/span[2]').text
       timeslot_price =  browser.element(xpath: '//div[2]/div[3]/span[2]').text
 
+      browser.quit
+
       [timeslot_date, timeslot_time, timeslot_duration, timeslot_price]
      end
+     
   end
 
   private
