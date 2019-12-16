@@ -18,4 +18,6 @@ You can have a look by cloning it in your local environment, then by running the
 
 Then run http://localhost:3000/ in your browser.
 
+Book Your Sport is also findable in production via wwww.bookyoursport.fr
 
+Enjoy!
