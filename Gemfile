@@ -66,7 +66,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # For scrapping
 gem "mechanize", "~> 2.7"
-gem "nokogiri", "~> 1.10"
+gem "nokogiri", "~> 1.12"
 gem "watir", "~> 6.16"
 
 # For seed
